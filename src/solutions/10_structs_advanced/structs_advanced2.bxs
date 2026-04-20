@@ -10,4 +10,4 @@ function main() {
     return { original: original, copy: copy }
 }
 
-var result = main()
+variables.result = main()

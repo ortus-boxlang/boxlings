@@ -10,4 +10,4 @@ function main() {
     return doubled
 }
 
-var result = main()
+variables.result = main()

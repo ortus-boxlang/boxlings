@@ -13,4 +13,5 @@ function main() {
 
 x = "variables"
 main()
+assert x == "variables" : "Expected x to equal 'variables' but got: #x#"
 println( "variables scope x is variables!" )

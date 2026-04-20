@@ -11,4 +11,4 @@ function main() {
     return keys
 }
 
-var result = main()
+variables.result = main()
