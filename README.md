@@ -58,6 +58,7 @@ boxlang --version  # Verify BoxLang 1.12.0 is active
 ```bash
 git clone https://github.com/ortus-boxlang/boxlings.git
 cd boxlings
+box install
 ```
 
 ### 2. Initialize Your Exercises
