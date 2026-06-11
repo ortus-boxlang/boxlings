@@ -1,0 +1,47 @@
+/**
+ * TestBox Test for set9 exercise
+ *
+ * READ THIS FIRST! This test shows you what your code should do.
+ *
+ * Your task: Make the exercise code pass these tests!
+ */
+class extends="testbox.system.BaseSpec" {
+
+    function run() {
+        describe( "Mutation & Algebra 3 - Set Operators", () => {
+
+            it( "should compute union using + operator", () => {
+                include "set9.bxs"
+
+                var result = main()
+
+                expect( unionResult.size() ).toBe( 5 )
+            })
+
+            it( "should compute difference using - operator", () => {
+                include "set9.bxs"
+
+                main()
+
+                expect( diffResult.size() ).toBe( 2 )
+            })
+
+            it( "should compute intersection using * operator", () => {
+                include "set9.bxs"
+
+                main()
+
+                expect( intersectResult.size() ).toBe( 1 )
+            })
+
+            it( "should compute symmetric difference using ^ operator", () => {
+                include "set9.bxs"
+
+                main()
+
+                expect( symdiffResult.size() ).toBe( 4 )
+            })
+
+        })
+    }
+}

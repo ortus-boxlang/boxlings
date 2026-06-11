@@ -1,0 +1,20 @@
+// TODO: Test membership and iterate over Set elements
+
+function main() {
+    var fruits = setOf( "apple", "banana", "cherry" )
+
+    // TODO: Check if "banana" is in the set using .contains() or .has()
+    println( "Has banana: #???#" )
+
+    // TODO: Check if "grape" is in the set
+    println( "Has grape: #???#" )
+
+    // TODO: Iterate over the set and print each fruit
+    for ( item in fruits ) {
+        println( "Fruit: #???#" )
+    }
+
+    return fruits
+}
+
+main()

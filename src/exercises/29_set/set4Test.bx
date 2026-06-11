@@ -1,0 +1,39 @@
+/**
+ * TestBox Test for set4 exercise
+ *
+ * READ THIS FIRST! This test shows you what your code should do.
+ *
+ * Your task: Make the exercise code pass these tests!
+ */
+class extends="testbox.system.BaseSpec" {
+
+    function run() {
+        describe( "Set Types & Access 1 - Set Variants", () => {
+
+            it( "should create a default (hash) set", () => {
+                include "set4.bxs"
+
+                var result = main()
+
+                expect( hashSet.size() ).toBe( 3 )
+            })
+
+            it( "should create a linked set preserving insertion order", () => {
+                include "set4.bxs"
+
+                main()
+
+                expect( linkedSet.size() ).toBe( 3 )
+            })
+
+            it( "should create a sorted set in natural order", () => {
+                include "set4.bxs"
+
+                main()
+
+                expect( sortedSet.size() ).toBe( 4 )
+            })
+
+        })
+    }
+}

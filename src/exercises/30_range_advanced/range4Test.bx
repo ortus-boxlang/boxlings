@@ -1,0 +1,39 @@
+/**
+ * TestBox Test for range4 exercise
+ *
+ * READ THIS FIRST! This test shows you what your code should do.
+ *
+ * Your task: Make the exercise code pass these tests!
+ */
+class extends="testbox.system.BaseSpec" {
+
+    function run() {
+        describe( "Range Types & Stepping 2 - Custom Stepping", () => {
+
+            it( "should create a stepped range with step 2 (odd numbers)", () => {
+                include "range4.bxs"
+
+                var result = main()
+
+                expect( oddNumbers.len() ).toBe( 5 )
+            })
+
+            it( "should create a descending stepped range", () => {
+                include "range4.bxs"
+
+                main()
+
+                expect( descending.len() ).toBe( 4 )
+            })
+
+            it( "should create a DateTime range with unit-based stepping", () => {
+                include "range4.bxs"
+
+                main()
+
+                expect( monthly.len() ).toBe( 6 )
+            })
+
+        })
+    }
+}

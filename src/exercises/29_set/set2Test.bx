@@ -1,0 +1,47 @@
+/**
+ * TestBox Test for set2 exercise
+ *
+ * READ THIS FIRST! This test shows you what your code should do.
+ *
+ * Your task: Make the exercise code pass these tests!
+ */
+class extends="testbox.system.BaseSpec" {
+
+    function run() {
+        describe( "Creating Sets 2 - Literal Syntax", () => {
+
+            it( "should create a set using literal syntax", () => {
+                include "set2.bxs"
+
+                var result = main()
+
+                expect( mySet.size() ).toBe( 3 )
+            })
+
+            it( "should create an empty set using literal syntax", () => {
+                include "set2.bxs"
+
+                main()
+
+                expect( emptySet.size() ).toBe( 0 )
+            })
+
+            it( "should spread an array into a set", () => {
+                include "set2.bxs"
+
+                main()
+
+                expect( combinedSet.size() ).toBe( 5 )
+            })
+
+            it( "should spread another set into a new set", () => {
+                include "set2.bxs"
+
+                main()
+
+                expect( mergedSet.size() ).toBe( 7 )
+            })
+
+        })
+    }
+}

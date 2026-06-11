@@ -14,7 +14,7 @@ Inspired by [rustlings](https://github.com/rust-lang/rustlings), **BoxLings** is
 
 ## ✨ Features
 
-- 🎯 **129 Progressive Exercises** across 28 topics
+- 🎯 **141 Progressive Exercises** across 29 topics
 - 🧪 **TDD/BDD Learning** - Read and write TestBox tests
 - 👀 **Watch Mode** - Auto-rerun on file changes
 - 💡 **Hints System** - Get help when stuck
@@ -258,7 +258,7 @@ Dive deeper into BoxLang:
 17. **Async** (6) - Threads, futures, async programming
 18. **Components** (3) - bx:http, bx:query, etc.
 
-### Phase 3: Advanced (48 exercises)
+### Phase 3: Advanced (60 exercises)
 
 Master BoxLang-specific features:
 
@@ -273,6 +273,7 @@ Master BoxLang-specific features:
 27. **Spread** (4) - Spread operator for arrays, structs, and function calls
 28. **Range** (2) - The `..` range operator and functional methods on ranges
 29. **Assert** (2) - The `assert` statement with custom messages
+30. **Set** (12) - The `Set` collection type, operations, and functional methods
 
 ---
 

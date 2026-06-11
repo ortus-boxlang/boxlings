@@ -1,0 +1,24 @@
+// TODO: Use custom stepping with .step()
+
+function main() {
+    // TODO: Create a range 1..10 with step of 2 (odd numbers)
+    var oddNumbers = (???).step( ??? )
+
+    // TODO: Create a range 10..1 with step of -3 (descending)
+    var descending = (???).step( ??? )
+
+    // TODO: Create a range 1..10 with step of 3
+    var spaced = (???).step( ??? )
+
+    // TODO: Create a DateTime range with unit-based stepping (1 month)
+    var monthly = (createDate(2024,1,15)..createDate(2024,6,15)).step( ??? )
+
+    println( "Odd numbers: #oddNumbers#" )
+    println( "Descending: #descending#" )
+    println( "Spaced: #spaced#" )
+    println( "Monthly count: #monthly.len()#" )
+
+    return oddNumbers
+}
+
+main()

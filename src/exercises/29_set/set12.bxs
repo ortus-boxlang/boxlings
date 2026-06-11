@@ -1,0 +1,21 @@
+// TODO: Work with unmodifiable sets and Java interop
+
+function main() {
+    var mySet = setNew( values=[ 1, 2, 3 ] )
+
+    // TODO: Create an unmodifiable (frozen) copy of the set
+    var frozen = mySet.???()
+
+    // TODO: Thaw the frozen set to get a mutable copy
+    var thawed = frozen.???()
+
+    // TODO: Add 4 to the thawed set
+    thawed.??? ( 4 )
+
+    println( "Frozen size: #frozen.size()#" )
+    println( "Thawed set: #thawed#" )
+
+    return thawed
+}
+
+main()

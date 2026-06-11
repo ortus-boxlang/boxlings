@@ -1,0 +1,29 @@
+// TODO: Convert Sets to other types and work with queries
+
+function main() {
+    var mySet = setNew( type="linked", values=[ "a", "b", "c" ] )
+
+    // TODO: Convert the set to an array
+    var arr = mySet.???()
+
+    // TODO: Convert the set to a comma-delimited list string
+    var csv = mySet.???()
+
+    // TODO: Convert the set to a dash-delimited list string
+    var dashList = mySet.??? ( "-" )
+
+    // TODO: Create a query and convert it to a Set
+    var q = queryNew( "name,age", "varchar,integer", [ [ "Alice", 30 ], [ "Bob", 25 ] ] )
+    var querySet = q.???()
+
+    // TODO: Get distinct values from a query column as a Set
+    var names = q.columnData( "name" ).???()
+
+    println( "Array: #arr#" )
+    println( "CSV: #csv#" )
+    println( "Dash list: #dashList#" )
+
+    return arr
+}
+
+main()

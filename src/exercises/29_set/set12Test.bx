@@ -1,0 +1,31 @@
+/**
+ * TestBox Test for set12 exercise
+ *
+ * READ THIS FIRST! This test shows you what your code should do.
+ *
+ * Your task: Make the exercise code pass these tests!
+ */
+class extends="testbox.system.BaseSpec" {
+
+    function run() {
+        describe( "Functional Sets & Advanced 3 - Unmodifiable and Java Interop", () => {
+
+            it( "should create an unmodifiable set with the original size", () => {
+                include "set12.bxs"
+
+                var result = main()
+
+                expect( frozen.size() ).toBe( 3 )
+            })
+
+            it( "should thaw a frozen set and allow mutations", () => {
+                include "set12.bxs"
+
+                main()
+
+                expect( thawed.size() ).toBe( 4 )
+            })
+
+        })
+    }
+}

@@ -1,0 +1,39 @@
+/**
+ * TestBox Test for range6 exercise
+ *
+ * READ THIS FIRST! This test shows you what your code should do.
+ *
+ * Your task: Make the exercise code pass these tests!
+ */
+class extends="testbox.system.BaseSpec" {
+
+    function run() {
+        describe( "Unbounded & Lazy Ranges 1 - Half-Bounded", () => {
+
+            it( "should create a half-bounded range with no upper bound", () => {
+                include "range6.bxs"
+
+                var result = main()
+
+                expect( openEnd.isHalfBounded() ).toBe( true )
+            })
+
+            it( "should iterate from 1 to 5 using break", () => {
+                include "range6.bxs"
+
+                main()
+
+                expect( result.len() ).toBe( 5 )
+            })
+
+            it( "should check if half-bounded range contains a value", () => {
+                include "range6.bxs"
+
+                main()
+
+                expect( hasLarge ).toBe( true )
+            })
+
+        })
+    }
+}

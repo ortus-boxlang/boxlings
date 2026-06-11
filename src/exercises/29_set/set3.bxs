@@ -1,0 +1,20 @@
+// TODO: Create Sets using setOf() and listToSet()
+
+function main() {
+    // TODO: Create a Set from varargs using setOf() with values 10, 20, 30
+    var fromVarargs = ???
+
+    // TODO: Create a Set from a comma-delimited string
+    var fromString = "apple,banana,cherry".???()
+
+    // TODO: Create a Set from a pipe-delimited string with type="linked"
+    var fromPipe = "red|green|blue|red".listToSet( ??? )
+
+    println( "From varargs: #fromVarargs#" )
+    println( "From string: #fromString#" )
+    println( "From pipe-delimited: #fromPipe#" )
+
+    return fromVarargs
+}
+
+main()

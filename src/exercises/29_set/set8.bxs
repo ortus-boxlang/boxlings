@@ -1,0 +1,27 @@
+// TODO: Perform Set algebra operations
+
+function main() {
+    var a = setOf( 1, 2, 3, 4 )
+    var b = setOf( 3, 4, 5, 6 )
+
+    // TODO: Create a union of both sets (all unique elements)
+    var unionResult = a.??? ( b )
+
+    // TODO: Create an intersection (common elements)
+    var intersectResult = a.??? ( b )
+
+    // TODO: Create a difference (elements in a but not b)
+    var diffResult = a.??? ( b )
+
+    // TODO: Create a symmetric difference (elements in either, not both)
+    var symdiffResult = a.??? ( b )
+
+    println( "Union: #unionResult#" )
+    println( "Intersection: #intersectResult#" )
+    println( "Difference: #diffResult#" )
+    println( "Symmetric difference: #symdiffResult#" )
+
+    return unionResult
+}
+
+main()

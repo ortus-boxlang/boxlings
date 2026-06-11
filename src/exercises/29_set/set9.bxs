@@ -1,0 +1,27 @@
+// TODO: Use set algebra operators (+, -, *, ^)
+
+function main() {
+    var a = set{ 1, 2, 3 }
+    var b = set{ 3, 4, 5 }
+
+    // TODO: Union using + operator
+    var unionResult = a ??? b
+
+    // TODO: Difference using - operator
+    var diffResult = a ??? b
+
+    // TODO: Intersection using * operator
+    var intersectResult = a ??? b
+
+    // TODO: Symmetric difference using ^ operator
+    var symdiffResult = a ??? b
+
+    println( "Union (+): #unionResult#" )
+    println( "Difference (-): #diffResult#" )
+    println( "Intersection (*): #intersectResult#" )
+    println( "Symmetric difference (^): #symdiffResult#" )
+
+    return unionResult
+}
+
+main()

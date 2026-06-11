@@ -1,0 +1,23 @@
+/**
+ * TestBox Test for set7 exercise
+ *
+ * READ THIS FIRST! This test shows you what your code should do.
+ *
+ * Your task: Make the exercise code pass these tests!
+ */
+class extends="testbox.system.BaseSpec" {
+
+    function run() {
+        describe( "Mutation & Algebra 1 - Set Mutation", () => {
+
+            it( "should mutate a set with add, remove, and retainAll", () => {
+                include "set7.bxs"
+
+                var result = main()
+
+                expect( mySet.size() ).toBe( 2 )
+            })
+
+        })
+    }
+}

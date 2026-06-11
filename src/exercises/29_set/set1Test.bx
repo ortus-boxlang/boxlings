@@ -1,0 +1,31 @@
+/**
+ * TestBox Test for set1 exercise
+ *
+ * READ THIS FIRST! This test shows you what your code should do.
+ *
+ * Your task: Make the exercise code pass these tests!
+ */
+class extends="testbox.system.BaseSpec" {
+
+    function run() {
+        describe( "Creating Sets 1 - Basic Creation", () => {
+
+            it( "should create a set from an array with duplicates", () => {
+                include "set1.bxs"
+
+                var result = main()
+
+                expect( result.size() ).toBe( 3 )
+            })
+
+            it( "should print the correct size", () => {
+                include "set1.bxs"
+
+                main()
+
+                expect( lastOutput() ).toInclude( "3" )
+            })
+
+        })
+    }
+}

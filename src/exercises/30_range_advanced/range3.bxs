@@ -1,0 +1,20 @@
+// TODO: Explore different range types (decimal, character, DateTime)
+
+function main() {
+    // TODO: Create a decimal range from 3.5 to 1.5 (descending)
+    var decimalRange = ???
+
+    // TODO: Create a character range from "a" to "e"
+    var charRange = ???
+
+    // TODO: Create a DateTime range from Jan 1 to Jan 5, 2024
+    var dateRange = (createDate(2024,1,1)..createDate(2024,1,5))
+
+    println( "Decimal range: #decimalRange#" )
+    println( "Character range: #charRange#" )
+    println( "Date range length: #dateRange.len()#" )
+
+    return decimalRange
+}
+
+main()

@@ -1,0 +1,55 @@
+/**
+ * TestBox Test for set10 exercise
+ *
+ * READ THIS FIRST! This test shows you what your code should do.
+ *
+ * Your task: Make the exercise code pass these tests!
+ */
+class extends="testbox.system.BaseSpec" {
+
+    function run() {
+        describe( "Functional Sets & Advanced 1 - Functional Operations", () => {
+
+            it( "should map numbers to doubled values", () => {
+                include "set10.bxs"
+
+                var result = main()
+
+                expect( doubled.size() ).toBe( 5 )
+            })
+
+            it( "should filter to even numbers", () => {
+                include "set10.bxs"
+
+                main()
+
+                expect( evens.size() ).toBe( 2 )
+            })
+
+            it( "should reduce to a sum", () => {
+                include "set10.bxs"
+
+                main()
+
+                expect( total ).toBe( 15 )
+            })
+
+            it( "should check if all numbers are positive", () => {
+                include "set10.bxs"
+
+                main()
+
+                expect( allPositive ).toBe( true )
+            })
+
+            it( "should check if any number is greater than 4", () => {
+                include "set10.bxs"
+
+                main()
+
+                expect( hasLarge ).toBe( true )
+            })
+
+        })
+    }
+}

@@ -1,0 +1,22 @@
+// TODO: Explore case sensitivity in Sets
+
+function main() {
+    // TODO: Create a default (case-insensitive) Set with "Hello", "hello", "HELLO"
+    var caseInsensitive = setNew( ??? )
+
+    // TODO: Create a case-sensitive Set with "Hello", "hello", "HELLO"
+    var caseSensitive = setNew( ??? )
+
+    println( "Case-insensitive size: #???#" )
+    println( "Case-sensitive size: #???#" )
+
+    // TODO: Check if "hElLo" is in the case-insensitive set
+    println( "Contains hElLo (case-insensitive): #???#" )
+
+    // TODO: Check if "hElLo" is in the case-sensitive set
+    println( "Contains hElLo (case-sensitive): #???#" )
+
+    return caseInsensitive
+}
+
+main()

@@ -1099,6 +1099,114 @@
       "test_path": "exercises/28_assert/assert2Test.bx",
       "test_mode": "read",
       "hint": "Write one assert per guard condition with a message that explains exactly what violated. Use order.keyExists( \"key\" ) to check for struct keys."
+    },
+    {
+      "name": "set1",
+      "dir": "29_set",
+      "path": "exercises/29_set/set1.bxs",
+      "test": true,
+      "test_path": "exercises/29_set/set1Test.bx",
+      "test_mode": "read",
+      "hint": "Use setNew() or [].toSet() to create a Set. Remember: sets remove duplicates automatically."
+    },
+    {
+      "name": "set2",
+      "dir": "29_set",
+      "path": "exercises/29_set/set2.bxs",
+      "test": true,
+      "test_path": "exercises/29_set/set2Test.bx",
+      "test_mode": "read",
+      "hint": "Use the literal syntax set{ ... } to create sets. Spread arrays with ...arr and spread other sets with ...other."
+    },
+    {
+      "name": "set3",
+      "dir": "29_set",
+      "path": "exercises/29_set/set3.bxs",
+      "test": true,
+      "test_path": "exercises/29_set/set3Test.bx",
+      "test_mode": "read",
+      "hint": "Use setOf() for varargs and .listToSet() for strings. Pass delimiter and type as named arguments."
+    },
+    {
+      "name": "set4",
+      "dir": "29_set",
+      "path": "exercises/29_set/set4.bxs",
+      "test": true,
+      "test_path": "exercises/29_set/set4Test.bx",
+      "test_mode": "read",
+      "hint": "Use type='linked' for insertion order and type='sorted' for natural ordering. Default (hash) has no ordering."
+    },
+    {
+      "name": "set5",
+      "dir": "29_set",
+      "path": "exercises/29_set/set5.bxs",
+      "test": true,
+      "test_path": "exercises/29_set/set5Test.bx",
+      "test_mode": "read",
+      "hint": "Use .contains() or .has() to test membership. Iterate with 'for ( item in mySet )'."
+    },
+    {
+      "name": "set6",
+      "dir": "29_set",
+      "path": "exercises/29_set/set6.bxs",
+      "test": true,
+      "test_path": "exercises/29_set/set6Test.bx",
+      "test_mode": "read",
+      "hint": "Sets are case-insensitive by default. Pass caseSensitive=true to treat different cases as distinct."
+    },
+    {
+      "name": "set7",
+      "dir": "29_set",
+      "path": "exercises/29_set/set7.bxs",
+      "test": true,
+      "test_path": "exercises/29_set/set7Test.bx",
+      "test_mode": "read",
+      "hint": "Use .add(), .addAll(), .remove(), .removeAll(), and .retainAll() to mutate sets."
+    },
+    {
+      "name": "set8",
+      "dir": "29_set",
+      "path": "exercises/29_set/set8.bxs",
+      "test": true,
+      "test_path": "exercises/29_set/set8Test.bx",
+      "test_mode": "read",
+      "hint": "Use .union(), .intersection(), .difference(), and .symmetricDifference() for set algebra."
+    },
+    {
+      "name": "set9",
+      "dir": "29_set",
+      "path": "exercises/29_set/set9.bxs",
+      "test": true,
+      "test_path": "exercises/29_set/set9Test.bx",
+      "test_mode": "read",
+      "hint": "Use + for union, - for difference, * for intersection, and ^ for symmetric difference."
+    },
+    {
+      "name": "set10",
+      "dir": "29_set",
+      "path": "exercises/29_set/set10.bxs",
+      "test": true,
+      "test_path": "exercises/29_set/set10Test.bx",
+      "test_mode": "read",
+      "hint": "Use .map(), .filter(), and .reduce() for functional operations. Pass a closure as the argument."
+    },
+    {
+      "name": "set11",
+      "dir": "29_set",
+      "path": "exercises/29_set/set11.bxs",
+      "test": true,
+      "test_path": "exercises/29_set/set11Test.bx",
+      "test_mode": "read",
+      "hint": "Use .toArray() to convert to array and .toList() or .toList( delimiter ) for list strings."
+    },
+    {
+      "name": "set12",
+      "dir": "29_set",
+      "path": "exercises/29_set/set12.bxs",
+      "test": true,
+      "test_path": "exercises/29_set/set12Test.bx",
+      "test_mode": "read",
+      "hint": "Use .toUnmodifiable() to freeze a set and .toModifiable() (or .thaw()) to get a mutable copy."
     }
   ]
 }

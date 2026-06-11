@@ -1,0 +1,39 @@
+/**
+ * TestBox Test for range5 exercise
+ *
+ * READ THIS FIRST! This test shows you what your code should do.
+ *
+ * Your task: Make the exercise code pass these tests!
+ */
+class extends="testbox.system.BaseSpec" {
+
+    function run() {
+        describe( "Range Types & Stepping 3 - Exclusive Boundaries", () => {
+
+            it( "should create a range that excludes the start", () => {
+                include "range5.bxs"
+
+                var result = main()
+
+                expect( excludeStart.len() ).toBe( 4 )
+            })
+
+            it( "should create a range that excludes the end", () => {
+                include "range5.bxs"
+
+                main()
+
+                expect( excludeEnd.len() ).toBe( 4 )
+            })
+
+            it( "should create a range that excludes both boundaries", () => {
+                include "range5.bxs"
+
+                main()
+
+                expect( excludeBoth.len() ).toBe( 2 )
+            })
+
+        })
+    }
+}

@@ -1,0 +1,39 @@
+/**
+ * TestBox Test for set11 exercise
+ *
+ * READ THIS FIRST! This test shows you what your code should do.
+ *
+ * Your task: Make the exercise code pass these tests!
+ */
+class extends="testbox.system.BaseSpec" {
+
+    function run() {
+        describe( "Functional Sets & Advanced 2 - Conversions", () => {
+
+            it( "should convert a set to an array", () => {
+                include "set11.bxs"
+
+                var result = main()
+
+                expect( arr.len() ).toBe( 3 )
+            })
+
+            it( "should convert a set to a comma-delimited list", () => {
+                include "set11.bxs"
+
+                main()
+
+                expect( csv ).toInclude( "a,b,c" )
+            })
+
+            it( "should convert a set to a dash-delimited list", () => {
+                include "set11.bxs"
+
+                main()
+
+                expect( dashList ).toInclude( "a-b-c" )
+            })
+
+        })
+    }
+}

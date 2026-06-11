@@ -1,0 +1,19 @@
+// TODO: Create a Set from this array with duplicates [ 1, 2, 2, 3, 3, 3 ]
+// Remember: Sets automatically remove duplicates!
+
+function main() {
+    var numbers = [ 1, 2, 2, 3, 3, 3 ]
+
+    // TODO: Convert the array to a Set using .toSet()
+    var mySet = ???
+
+    // TODO: Print the size of the set (should be 3, not 6)
+    println( "Set size: #???#" )
+
+    // TODO: Print the set as an array (should be [1, 2, 3])
+    println( "Set as array: #???#" )
+
+    return mySet
+}
+
+main()

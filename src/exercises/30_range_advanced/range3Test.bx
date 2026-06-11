@@ -1,0 +1,39 @@
+/**
+ * TestBox Test for range3 exercise
+ *
+ * READ THIS FIRST! This test shows you what your code should do.
+ *
+ * Your task: Make the exercise code pass these tests!
+ */
+class extends="testbox.system.BaseSpec" {
+
+    function run() {
+        describe( "Range Types & Stepping 1 - Range Types", () => {
+
+            it( "should create a descending decimal range", () => {
+                include "range3.bxs"
+
+                var result = main()
+
+                expect( decimalRange.len() ).toBe( 5 )
+            })
+
+            it( "should create a character range from a to e", () => {
+                include "range3.bxs"
+
+                main()
+
+                expect( charRange.len() ).toBe( 5 )
+            })
+
+            it( "should create a DateTime range with correct length", () => {
+                include "range3.bxs"
+
+                main()
+
+                expect( dateRange.len() ).toBe( 5 )
+            })
+
+        })
+    }
+}

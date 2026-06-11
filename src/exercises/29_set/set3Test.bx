@@ -1,0 +1,39 @@
+/**
+ * TestBox Test for set3 exercise
+ *
+ * READ THIS FIRST! This test shows you what your code should do.
+ *
+ * Your task: Make the exercise code pass these tests!
+ */
+class extends="testbox.system.BaseSpec" {
+
+    function run() {
+        describe( "Creating Sets 3 - setOf and listToSet", () => {
+
+            it( "should create a set from varargs using setOf()", () => {
+                include "set3.bxs"
+
+                var result = main()
+
+                expect( fromVarargs.size() ).toBe( 3 )
+            })
+
+            it( "should create a set from a comma-delimited string", () => {
+                include "set3.bxs"
+
+                main()
+
+                expect( fromString.size() ).toBe( 3 )
+            })
+
+            it( "should create a linked set from a pipe-delimited string", () => {
+                include "set3.bxs"
+
+                main()
+
+                expect( fromPipe.size() ).toBe( 3 )
+            })
+
+        })
+    }
+}

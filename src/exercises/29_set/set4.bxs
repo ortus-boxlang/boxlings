@@ -1,0 +1,20 @@
+// TODO: Create Sets with different types (default, linked, sorted)
+
+function main() {
+    // TODO: Create a default (hash) Set with values 3, 1, 2
+    var hashSet = set{ ??? }
+
+    // TODO: Create a linked (ordered) Set that preserves insertion order
+    var linkedSet = setNew( ??? )
+
+    // TODO: Create a sorted Set with values 9, 1, 5, 3
+    var sortedSet = setNew( ??? )
+
+    println( "Hash set: #hashSet#" )
+    println( "Linked set: #linkedSet#" )
+    println( "Sorted set: #sortedSet#" )
+
+    return sortedSet
+}
+
+main()

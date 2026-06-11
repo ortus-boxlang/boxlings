@@ -1,0 +1,31 @@
+/**
+ * TestBox Test for set5 exercise
+ *
+ * READ THIS FIRST! This test shows you what your code should do.
+ *
+ * Your task: Make the exercise code pass these tests!
+ */
+class extends="testbox.system.BaseSpec" {
+
+    function run() {
+        describe( "Set Types & Access 2 - Membership and Iteration", () => {
+
+            it( "should check membership with contains()", () => {
+                include "set5.bxs"
+
+                var result = main()
+
+                expect( fruits.contains( "banana" ) ).toBe( true )
+            })
+
+            it( "should return false for missing elements", () => {
+                include "set5.bxs"
+
+                main()
+
+                expect( fruits.contains( "grape" ) ).toBe( false )
+            })
+
+        })
+    }
+}

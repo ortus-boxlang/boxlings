@@ -1,0 +1,30 @@
+// TODO: Use functional programming operations on Sets
+
+function main() {
+    var numbers = setOf( 1, 2, 3, 4, 5 )
+
+    // TODO: Use .map() to double each number
+    var doubled = numbers.??? ( v => v * 2 )
+
+    // TODO: Use .filter() to keep only even numbers
+    var evens = numbers.??? ( v => v % 2 == 0 )
+
+    // TODO: Use .reduce() to sum all numbers (init = 0)
+    var total = numbers.??? ( (acc, v) => acc + v, ??? )
+
+    // TODO: Use .every() to check if all numbers are positive
+    var allPositive = numbers.??? ( v => v > 0 )
+
+    // TODO: Use .some() to check if any number is greater than 4
+    var hasLarge = numbers.??? ( v => v > 4 )
+
+    println( "Doubled: #doubled#" )
+    println( "Evens: #evens#" )
+    println( "Total: #total#" )
+    println( "All positive: #allPositive#" )
+    println( "Has large: #hasLarge#" )
+
+    return doubled
+}
+
+main()

@@ -1,0 +1,26 @@
+// TODO: Create a Set using the literal syntax set{ ... }
+
+function main() {
+    // TODO: Create a Set with values 1, 2, 3 using literal syntax
+    var mySet = ???
+
+    // TODO: Create an empty Set using literal syntax
+    var emptySet = ???
+
+    // TODO: Spread an array into a Set (arr = [ 4, 5 ])
+    var arr = [ 4, 5 ]
+    var combinedSet = set{ 1, 2, ??? }
+
+    // TODO: Spread another Set into a new Set
+    var other = set{ 6, 7 }
+    var mergedSet = ???
+
+    println( "Literal set: #mySet#" )
+    println( "Empty set: #emptySet#" )
+    println( "Combined: #combinedSet#" )
+    println( "Merged: #mergedSet#" )
+
+    return mergedSet
+}
+
+main()

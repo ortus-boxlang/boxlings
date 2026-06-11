@@ -1,0 +1,30 @@
+// TODO: Work with half-bounded ranges (1.., ..5)
+
+function main() {
+    // TODO: Create a half-bounded range starting at 1 with no upper bound
+    var openEnd = ???
+
+    // TODO: Iterate from 1 upwards, breaking at 5
+    var result = []
+    for ( i in openEnd ) {
+        // TODO: Append each value to result and break when i == 5
+        ???
+    }
+
+    // TODO: Check if a half-bounded range contains 999
+    var hasLarge = openEnd.??? ( ??? )
+
+    // TODO: Create a half-bounded range ending at 5 with no start
+    var openStart = ???
+
+    // TODO: Check if it contains 3
+    var hasThree = openStart.??? ( ??? )
+
+    println( "Iterated: #result#" )
+    println( "Has 999: #hasLarge#" )
+    println( "Has 3 (open start): #hasThree#" )
+
+    return result
+}
+
+main()

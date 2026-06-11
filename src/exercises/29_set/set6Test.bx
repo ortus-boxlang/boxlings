@@ -1,0 +1,31 @@
+/**
+ * TestBox Test for set6 exercise
+ *
+ * READ THIS FIRST! This test shows you what your code should do.
+ *
+ * Your task: Make the exercise code pass these tests!
+ */
+class extends="testbox.system.BaseSpec" {
+
+    function run() {
+        describe( "Set Types & Access 3 - Case Sensitivity", () => {
+
+            it( "should treat different cases as duplicates by default", () => {
+                include "set6.bxs"
+
+                var result = main()
+
+                expect( caseInsensitive.size() ).toBe( 1 )
+            })
+
+            it( "should treat different cases as distinct when caseSensitive=true", () => {
+                include "set6.bxs"
+
+                main()
+
+                expect( caseSensitive.size() ).toBe( 3 )
+            })
+
+        })
+    }
+}

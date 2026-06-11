@@ -1,0 +1,47 @@
+/**
+ * TestBox Test for set8 exercise
+ *
+ * READ THIS FIRST! This test shows you what your code should do.
+ *
+ * Your task: Make the exercise code pass these tests!
+ */
+class extends="testbox.system.BaseSpec" {
+
+    function run() {
+        describe( "Mutation & Algebra 2 - Set Algebra", () => {
+
+            it( "should compute union of two sets", () => {
+                include "set8.bxs"
+
+                var result = main()
+
+                expect( unionResult.size() ).toBe( 6 )
+            })
+
+            it( "should compute intersection of two sets", () => {
+                include "set8.bxs"
+
+                main()
+
+                expect( intersectResult.size() ).toBe( 2 )
+            })
+
+            it( "should compute difference of two sets", () => {
+                include "set8.bxs"
+
+                main()
+
+                expect( diffResult.size() ).toBe( 2 )
+            })
+
+            it( "should compute symmetric difference of two sets", () => {
+                include "set8.bxs"
+
+                main()
+
+                expect( symdiffResult.size() ).toBe( 4 )
+            })
+
+        })
+    }
+}

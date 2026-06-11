@@ -1,0 +1,27 @@
+// TODO: Mutate Sets using member functions
+
+function main() {
+    var mySet = setOf( "apple", "banana", "cherry" )
+
+    // TODO: Add "date" to the set
+    mySet.??? ( "date" )
+
+    // TODO: Add multiple fruits using .addAll()
+    mySet.??? ( [ "fig", "grape" ] )
+
+    // TODO: Remove "banana" from the set
+    mySet.??? ( "banana" )
+
+    // TODO: Remove multiple items using .removeAll()
+    mySet.??? ( [ "cherry", "date" ] )
+
+    // TODO: Retain only specific items
+    mySet.??? ( [ "apple", "fig" ] )
+
+    println( "Final set: #mySet#" )
+    println( "Size: #mySet.size()#" )
+
+    return mySet
+}
+
+main()

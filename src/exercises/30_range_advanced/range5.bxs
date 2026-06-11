@@ -1,0 +1,20 @@
+// TODO: Use exclusive boundaries with >..<, <.., >..
+
+function main() {
+    // TODO: Create a range that excludes the start (1>..5)
+    var excludeStart = ???
+
+    // TODO: Create a range that excludes the end (1..<5)
+    var excludeEnd = ???
+
+    // TODO: Create a range that excludes both (1>..<5)
+    var excludeBoth = ???
+
+    println( "Exclude start: #excludeStart#" )
+    println( "Exclude end: #excludeEnd#" )
+    println( "Exclude both: #excludeBoth#" )
+
+    return excludeStart
+}
+
+main()
