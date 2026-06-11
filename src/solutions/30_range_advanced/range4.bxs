@@ -1,0 +1,13 @@
+// Custom stepping with .step()
+
+var oddNumbers = (1..10).step( 2 )
+var descending = (10..1).step( -3 )
+var spaced = (1..10).step( 3 )
+var monthly = (createDate(2024,1,15)..createDate(2024,6,15)).step( 1, "month" )
+
+println( "Odd numbers: #oddNumbers#" )
+println( "Descending: #descending#" )
+println( "Spaced: #spaced#" )
+println( "Monthly count: #monthly.len()#" )
+
+main()

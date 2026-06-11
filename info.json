@@ -829,6 +829,24 @@
       "hint": "onMissingMethod( missingMethodName, missingMethodArgs ) is called automatically. Use arguments.missingMethodName in the return string."
     },
     {
+      "name": "classes9",
+      "dir": "20_classes",
+      "path": "exercises/20_classes/classes9.bx",
+      "test": true,
+      "test_path": "exercises/20_classes/classes9Test.bx",
+      "test_mode": "read",
+      "hint": "Instantiate the inner class with 'new Item( name, price )' inside addItem(). In reduce(), use item.getPrice() to access each item's price."
+    },
+    {
+      "name": "classes10",
+      "dir": "20_classes",
+      "path": "exercises/20_classes/classes10.bxs",
+      "test": true,
+      "test_path": "exercises/20_classes/classes10Test.bx",
+      "test_mode": "read",
+      "hint": "Template classes are defined with the 'class ClassName { }' syntax directly in a .bxs script. FormalGreeter should extend Greeter using extends=\"Greeter\". Use variables.greeting to read the stored greeting."
+    },
+    {
       "name": "bifs1",
       "dir": "21_bifs",
       "path": "exercises/21_bifs/bifs1.bxs",
@@ -1071,7 +1089,7 @@
       "test": true,
       "test_path": "exercises/27_range/range1Test.bx",
       "test_mode": "read",
-      "hint": "The .. range operator generates inclusive integer arrays: 1..5 gives [1,2,3,4,5] and 5..1 gives [5,4,3,2,1]."
+      "hint": "The .. range operator creates a Range object (not an array). 1..5 produces values 1,2,3,4,5 when iterated and 5..1 produces 5,4,3,2,1."
     },
     {
       "name": "range2",
@@ -1080,7 +1098,7 @@
       "test": true,
       "test_path": "exercises/27_range/range2Test.bx",
       "test_mode": "read",
-      "hint": "Ranges are plain arrays — call functional methods directly on them. Wrap the range expression in parentheses before calling a member function: (1..10).reduce( ... )."
+      "hint": "Ranges are lazy objects — call functional methods directly on them. Wrap the range expression in parentheses before calling a member function: (1..10).reduce( ... )."
     },
     {
       "name": "assert1",
@@ -1207,6 +1225,171 @@
       "test_path": "exercises/29_set/set12Test.bx",
       "test_mode": "read",
       "hint": "Use .toUnmodifiable() to freeze a set and .toModifiable() (or .thaw()) to get a mutable copy."
+    },
+    {
+      "name": "range3",
+      "dir": "30_range_advanced",
+      "path": "exercises/30_range_advanced/range3.bxs",
+      "test": true,
+      "test_path": "exercises/30_range_advanced/range3Test.bx",
+      "test_mode": "read",
+      "hint": "Ranges work with decimals (3.5..1.5), characters ('a'..'e'), and DateTime objects."
+    },
+    {
+      "name": "range4",
+      "dir": "30_range_advanced",
+      "path": "exercises/30_range_advanced/range4.bxs",
+      "test": true,
+      "test_path": "exercises/30_range_advanced/range4Test.bx",
+      "test_mode": "read",
+      "hint": "Use .step(n) for numeric stepping and .step(n, 'unit') for DateTime unit-based stepping."
+    },
+    {
+      "name": "range5",
+      "dir": "30_range_advanced",
+      "path": "exercises/30_range_advanced/range5.bxs",
+      "test": true,
+      "test_path": "exercises/30_range_advanced/range5Test.bx",
+      "test_mode": "read",
+      "hint": "Use > to exclude start (1>..5), < to exclude end (1..<5), and <> to exclude both (1>..<5)."
+    },
+    {
+      "name": "range6",
+      "dir": "30_range_advanced",
+      "path": "exercises/30_range_advanced/range6.bxs",
+      "test": true,
+      "test_path": "exercises/30_range_advanced/range6Test.bx",
+      "test_mode": "read",
+      "hint": "Half-bounded ranges like 1.. can be iterated with a break condition. Use .contains() to check membership."
+    },
+    {
+      "name": "range7",
+      "dir": "30_range_advanced",
+      "path": "exercises/30_range_advanced/range7.bxs",
+      "test": true,
+      "test_path": "exercises/30_range_advanced/range7Test.bx",
+      "test_mode": "read",
+      "hint": "Fully unbounded ranges (..) contain everything non-null. Use .type('number') to constrain them."
+    },
+    {
+      "name": "range8",
+      "dir": "30_range_advanced",
+      "path": "exercises/30_range_advanced/range8.bxs",
+      "test": true,
+      "test_path": "exercises/30_range_advanced/range8Test.bx",
+      "test_mode": "read",
+      "hint": "Use .stream().limit(n).toList() to lazily process huge ranges without materializing them."
+    },
+    {
+      "name": "range9",
+      "dir": "30_range_advanced",
+      "path": "exercises/30_range_advanced/range9.bxs",
+      "test": true,
+      "test_path": "exercises/30_range_advanced/range9Test.bx",
+      "test_mode": "read",
+      "hint": "Stepped ranges check step-reachability, not just bounds. Use .contains() for both simple and stepped ranges."
+    },
+    {
+      "name": "range10",
+      "dir": "30_range_advanced",
+      "path": "exercises/30_range_advanced/range10.bxs",
+      "test": true,
+      "test_path": "exercises/30_range_advanced/range10Test.bx",
+      "test_mode": "read",
+      "hint": "Use .clamp(value) to snap values to bounds, and .isValueBefore/After() for position checks."
+    },
+    {
+      "name": "range11",
+      "dir": "30_range_advanced",
+      "path": "exercises/30_range_advanced/range11.bxs",
+      "test": true,
+      "test_path": "exercises/30_range_advanced/range11Test.bx",
+      "test_mode": "read",
+      "hint": "Use .isAscending(), .isIterable(), .getFrom()/getTo(), and .toArray() to query and convert ranges."
+    },
+    {
+      "name": "dataNavigators1",
+      "dir": "31_data_navigators",
+      "path": "exercises/31_data_navigators/dataNavigators1.bxs",
+      "test": false,
+      "hint": "Use the dataNavigate() BIF to create a navigator from your config structure. Store it in `nav`."
+    },
+    {
+      "name": "dataNavigators2",
+      "dir": "31_data_navigators",
+      "path": "exercises/31_data_navigators/dataNavigators2.bxs",
+      "test": false,
+      "hint": "Use nav.from('segment') to navigate to a nested section and get a scoped navigator."
+    },
+    {
+      "name": "dataNavigators3",
+      "dir": "31_data_navigators",
+      "path": "exercises/31_data_navigators/dataNavigators3.bxs",
+      "test": false,
+      "hint": "Use nav.has('key'), nav.has(['nested', 'path']), and nav.from('missing').isEmpty() to check existence."
+    },
+    {
+      "name": "dataNavigators4",
+      "dir": "31_data_navigators",
+      "path": "exercises/31_data_navigators/dataNavigators4.bxs",
+      "test": false,
+      "hint": "Use nav.get('key') for single keys, nav.get(['nested', 'path']) for nested values, and nav.get(['missing'], default) for defaults."
+    },
+    {
+      "name": "dataNavigators5",
+      "dir": "31_data_navigators",
+      "path": "exercises/31_data_navigators/dataNavigators5.bxs",
+      "test": false,
+      "hint": "Use nav.getOrDefault('key', 'default') to always get a guaranteed non-null value."
+    },
+    {
+      "name": "dataNavigators6",
+      "dir": "31_data_navigators",
+      "path": "exercises/31_data_navigators/dataNavigators6.bxs",
+      "test": false,
+      "hint": "Use nav.getOrThrow('key') for required config. It throws BoxRuntimeException if the key is missing."
+    },
+    {
+      "name": "dataNavigators7",
+      "dir": "31_data_navigators",
+      "path": "exercises/31_data_navigators/dataNavigators7.bxs",
+      "test": false,
+      "hint": "Use typed getters: getAsText(), getAsInteger(), getAsBoolean(), getAsDouble(), getAsLong(), getAsStruct()."
+    },
+    {
+      "name": "dataNavigators8",
+      "dir": "31_data_navigators",
+      "path": "exercises/31_data_navigators/dataNavigators8.bxs",
+      "test": false,
+      "hint": "Use nav.query('path') with JSONPath expressions like 'users[*].name' and filters like 'users[?(@.active == true)].name'."
+    },
+    {
+      "name": "dataNavigators9",
+      "dir": "31_data_navigators",
+      "path": "exercises/31_data_navigators/dataNavigators9.bxs",
+      "test": false,
+      "hint": "Use nav.ifPresent('key', (value) -> { ... }) for optional processing and nav.ifPresentOrElse() with a fallback."
+    },
+    {
+      "name": "dataNavigators10",
+      "dir": "31_data_navigators",
+      "path": "exercises/31_data_navigators/dataNavigators10.bxs",
+      "test": false,
+      "hint": "Use dot notation ('app.name'), array indexing ('features[1]'), slices ('features[1:2]'), and recursive descent ('..name')."
+    },
+    {
+      "name": "dataNavigators11",
+      "dir": "31_data_navigators",
+      "path": "exercises/31_data_navigators/dataNavigators11.bxs",
+      "test": false,
+      "hint": "Use recursive descent (..) to find keys anywhere in the structure and wildcards (*) for all values."
+    },
+    {
+      "name": "dataNavigators12",
+      "dir": "31_data_navigators",
+      "path": "exercises/31_data_navigators/dataNavigators12.bxs",
+      "test": false,
+      "hint": "Use filter expressions like 'users[?(@.active == true)].name' to find specific elements in arrays."
     }
   ]
 }

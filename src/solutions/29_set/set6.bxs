@@ -1,0 +1,16 @@
+// Explore case sensitivity in Sets
+
+function main() {
+    var caseInsensitive = setNew( values=[ "Hello", "hello", "HELLO" ] )
+    var caseSensitive = setNew( values=[ "Hello", "hello", "HELLO" ], caseSensitive=true )
+
+    println( "Case-insensitive size: #caseInsensitive.size()#" )
+    println( "Case-sensitive size: #caseSensitive.size()#" )
+
+    println( "Contains hElLo (case-insensitive): #caseInsensitive.contains( "hElLo" )#" )
+    println( "Contains hElLo (case-sensitive): #caseSensitive.contains( "hElLo" )#" )
+
+    return caseInsensitive
+}
+
+main()

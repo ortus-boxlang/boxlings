@@ -1,0 +1,53 @@
+// Data Navigators Exercise 4 - Getting Values with get()
+//
+// Your task: Use the `get()` method to retrieve values from your data structure.
+
+var config = {
+    "app": {
+        "name": "MyApp",
+        "version": "1.0.0"
+    },
+    "database": {
+        "host": "localhost",
+        "port": 5432,
+        "ssl": true
+    },
+    "features": [ "auth", "logging", "caching" ]
+}
+
+var nav = dataNavigate( config )
+
+// TODO: Get a single key value (returns null if not found)
+var appName = nav.get( "app" )
+assert isStruct( appName ) : "Expected app to be a struct, got: #appName#"
+assert appName.name == "MyApp" : "Expected app name to be 'MyApp'"
+
+// TODO: Get a nested value using variadic keys
+var dbHost = nav.get( ["database", "host"] )
+assert dbHost == "localhost" : "Expected database host to be 'localhost', got: #dbHost#"
+
+// TODO: Get a nested value with a default
+var cacheTtl = nav.get( ["cache", "ttl"], 3600 )
+assert cacheTtl == 3600 : "Expected default cache TTL of 3600, got: #cacheTtl#"
+
+// TODO: Get a value from an array (1-based indexing)
+var firstFeature = nav.get( ["features", 1] )
+assert firstFeature == "auth" : "Expected first feature to be 'auth', got: #firstFeature#"
+
+// TODO: Get the second feature
+var secondFeature = nav.get( ["features", 2] )
+assert secondFeature == "logging" : "Expected second feature to be 'logging', got: #secondFeature#"
+
+// TODO: Get a non-existent value (should return null)
+var missingValue = nav.get( ["nonexistent", "path"] )
+assert isNull( missingValue ) : "Expected null for non-existent path"
+
+// TODO: Get the entire features array
+var allFeatures = nav.get( "features" )
+assert isArray( allFeatures ) : "Expected features to be an array, got: #allFeatures#"
+assert allFeatures.len() == 3 : "Expected 3 features, got: #allFeatures.len()#"
+
+println( "Value retrieval successful!" )
+println( "App: #appName.name# v#appName.version#" )
+println( "Database: #dbHost:#nav.get(['database', 'port'])# (SSL: #nav.get(['database', 'ssl'])#)" )
+println( "Features: #allFeatures.toList()#" )

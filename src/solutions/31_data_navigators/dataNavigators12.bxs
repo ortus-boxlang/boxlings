@@ -1,0 +1,53 @@
+// Data Navigators Exercise 12 - Solution: Filter Expressions
+
+var data = {
+    "users": [
+        { "name": "Alice",   "role": "admin",  "active": true,  "score": 95 },
+        { "name": "Bob",     "role": "user",   "active": true,  "score": 87 },
+        { "name": "Charlie", "role": "user",   "active": false, "score": 72 },
+        { "name": "Diana",   "role": "admin",  "active": true,  "score": 91 },
+        { "name": "Eve",     "role": "user",   "active": false, "score": 65 }
+    ],
+    "settings": {
+        "theme": "dark",
+        "language": "en"
+    }
+}
+
+var nav = dataNavigate( data )
+
+// Solution: Query all active users using filter
+var activeUsers = nav.query( "users[?(@.active == true)].name" )
+assert isArray( activeUsers ) : "Expected array of names, got: #activeUsers#"
+assert activeUsers.len() == 3 : "Expected 3 active users, got: #activeUsers.len()#"
+
+// Solution: Query all admin users using filter
+var admins = nav.query( "users[?(@.role == 'admin')].name" )
+assert admins.len() == 2 : "Expected 2 admins, got: #admins.len()#"
+
+// Solution: Query users with score above 90 using filter
+var topScorers = nav.query( "users[?(@.score > 90)].name" )
+assert isArray( topScorers ) : "Expected array of names, got: #topScorers#"
+
+// Solution: Query users with score between 70 and 90 using filter
+var midScorers = nav.query( "users[?(@.score >= 70 && @.score <= 90)].name" )
+assert isArray( midScorers ) : "Expected array of names, got: #midScorers#"
+
+// Solution: Query all active admin users (combined filters)
+var activeAdmins = nav.query( "users[?(@.active == true && @.role == 'admin')].name" )
+assert activeAdmins.len() == 2 : "Expected 2 active admins, got: #activeAdmins.len()#"
+
+// Solution: Query all inactive users
+var inactiveUsers = nav.query( "users[?(@.active == false)].name" )
+assert inactiveUsers.len() == 2 : "Expected 2 inactive users, got: #inactiveUsers.len()#"
+
+// Solution: Query the first user matching a filter (using get())
+var firstActiveUser = nav.get( "users[?(@.active == true)]" )
+assert isStruct( firstActiveUser ) : "Expected struct, got: #firstActiveUser#"
+
+println( "Filter expressions working!" )
+println( "\nActive users: #activeUsers.toList()#" )
+println( "Admins: #admins.toList()#" )
+println( "Top scorers (>90): #topScorers.toList()#" )
+println( "Mid scorers (70-90): #midScorers.toList()#" )
+println( "Active admins: #activeAdmins.toList()#" )

@@ -1,0 +1,18 @@
+// Contains semantics and range-in-range
+
+var simpleRange = 1..10
+var containsFive = simpleRange.contains( 5 )
+var containsZero = simpleRange.contains( 0 )
+var steppedRange = (1..10).step( 3 )
+var containsFour = steppedRange.contains( 4 )
+var containsFiveStepped = steppedRange.contains( 5 )
+var outer = 1..10
+var innerRange = 3..7
+var rangeInRange = outer.contains( innerRange )
+
+println( "Simple contains 5: #containsFive#" )
+println( "Stepped contains 4 (reachable): #containsFour#" )
+println( "Stepped contains 5 (not reachable): #containsFiveStepped#" )
+println( "Range in range: #rangeInRange#" )
+
+main()

@@ -1,0 +1,11 @@
+// Exclusive boundaries
+
+var excludeStart = 1>..5
+var excludeEnd = 1..<5
+var excludeBoth = 1>..<5
+
+println( "Exclude start: #excludeStart#" )
+println( "Exclude end: #excludeEnd#" )
+println( "Exclude both: #excludeBoth#" )
+
+main()

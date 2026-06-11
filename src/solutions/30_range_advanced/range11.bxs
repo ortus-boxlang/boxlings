@@ -1,0 +1,21 @@
+// Query methods, conversion, and truthiness
+
+var myRange = 1..5
+var isAscending = myRange.isAscending()
+var isIterable = myRange.isIterable()
+var isBounded = myRange.isBounded()
+var fromValue = myRange.getFrom()
+var toValue = myRange.getTo()
+var asArray = myRange.toArray()
+var isTruthy = (myRange) ? "truthy" : "falsy"
+var emptyRange = (1..5).step( -1 )
+var isEmpty = emptyRange.isEmpty()
+
+println( "Ascending: #isAscending#" )
+println( "Iterable: #isIterable#" )
+println( "Bounded: #isBounded#" )
+println( "From: #fromValue#, To: #toValue#" )
+println( "As array: #asArray#" )
+println( "Truthy: #isTruthy#" )
+
+main()

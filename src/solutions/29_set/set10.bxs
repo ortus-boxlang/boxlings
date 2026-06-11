@@ -1,0 +1,21 @@
+// Use functional programming operations on Sets
+
+function main() {
+    var numbers = setOf( 1, 2, 3, 4, 5 )
+
+    var doubled = numbers.map( v => v * 2 )
+    var evens = numbers.filter( v => v % 2 == 0 )
+    var total = numbers.reduce( (acc, v) => acc + v, 0 )
+    var allPositive = numbers.every( v => v > 0 )
+    var hasLarge = numbers.some( v => v > 4 )
+
+    println( "Doubled: #doubled#" )
+    println( "Evens: #evens#" )
+    println( "Total: #total#" )
+    println( "All positive: #allPositive#" )
+    println( "Has large: #hasLarge#" )
+
+    return doubled
+}
+
+main()

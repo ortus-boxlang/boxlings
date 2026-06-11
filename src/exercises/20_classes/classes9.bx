@@ -1,0 +1,53 @@
+// TODO: Complete the inner class implementation.
+// Inner classes are named classes defined inside the body of another class.
+// They are ideal for tightly-coupled helpers that shouldn't live on their own.
+//
+// Docs: https://boxlang.ortusbooks.com/boxlang-language/classes/inner-classes
+
+class {
+
+    // TODO: Define an inner class 'Item' with:
+    //   - property name="name"  type="string"
+    //   - property name="price" type="numeric"
+    //   - An init( name, price ) constructor that stores both values and returns this
+    class Item {
+
+        property name="name"  type="string"
+        property name="price" type="numeric"
+
+        function init( required string name, required numeric price ) {
+            variables.name  = ???
+            variables.price = ???
+            return this
+        }
+
+    }
+
+    property name="items" type="array"
+
+    // Pseudo-constructor: initialise the items array
+    variables.items = []
+
+    function init() {
+        return this
+    }
+
+    // TODO: Create a new Item using the inner class and append it to variables.items.
+    //       Return 'this' so callers can chain addItem() calls.
+    function addItem( required string name, required numeric price ) {
+        var item = new Item( ???, ??? )
+        variables.items.append( item )
+        return this
+    }
+
+    // TODO: Return the sum of all item prices using reduce().
+    //       Start the accumulator at 0.
+    function getTotal() {
+        return variables.items.reduce( ( acc, item ) => acc + ???, 0 )
+    }
+
+    function getItems() {
+        return variables.items
+    }
+
+}

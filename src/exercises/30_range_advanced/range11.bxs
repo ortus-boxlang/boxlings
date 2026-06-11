@@ -1,0 +1,40 @@
+// TODO: Use query methods, conversion, and truthiness
+
+function main() {
+    // TODO: Create a range 1..5 and check its properties
+    var myRange = ???
+
+    // TODO: Check if the range is ascending
+    var isAscending = myRange.???()
+
+    // TODO: Check if the range is iterable
+    var isIterable = myRange.???()
+
+    // TODO: Check if the range is bounded
+    var isBounded = myRange.???()
+
+    // TODO: Get the start and end bounds
+    var fromValue = myRange.???()
+    var toValue = myRange.???()
+
+    // TODO: Convert the range to an array
+    var asArray = myRange.???()
+
+    // TODO: Check truthiness of a non-empty range
+    var isTruthy = ??? ( myRange ) ? "truthy" : "falsy"
+
+    // TODO: Create an empty range (descending with positive step)
+    var emptyRange = (1..5).step( -1 )
+    var isEmpty = emptyRange.???()
+
+    println( "Ascending: #isAscending#" )
+    println( "Iterable: #isIterable#" )
+    println( "Bounded: #isBounded#" )
+    println( "From: #fromValue#, To: #toValue#" )
+    println( "As array: #asArray#" )
+    println( "Truthy: #isTruthy#" )
+
+    return asArray
+}
+
+main()

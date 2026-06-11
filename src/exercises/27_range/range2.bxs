@@ -1,5 +1,6 @@
 // TODO: Combine the range operator with functional methods
-// Ranges produce regular arrays, so you can call map(), filter(), reduce(), etc. on them
+// Ranges are lazy objects — you can call map(), filter(), reduce(), etc. on them
+// They generate values on demand without materializing into memory
 
 // TODO: Use range to generate 1..10, then reduce to compute the sum
 var sum = ???

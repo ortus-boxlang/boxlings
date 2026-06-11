@@ -1,0 +1,55 @@
+/**
+ * TestBox Test for range10 exercise
+ *
+ * READ THIS FIRST! This test shows you what your code should do.
+ *
+ * Your task: Make the exercise code pass these tests!
+ */
+class extends="testbox.system.BaseSpec" {
+
+    function run() {
+        describe( "Range Queries & Conversions 2 - Clamping and Position", () => {
+
+            it( "should clamp values above high to the upper bound", () => {
+                include "range10.bxs"
+
+                var result = main()
+
+                expect( clampedHigh ).toBe( 10 )
+            })
+
+            it( "should clamp values below low to the lower bound", () => {
+                include "range10.bxs"
+
+                main()
+
+                expect( clampedLow ).toBe( 1 )
+            })
+
+            it( "should return unchanged values within bounds", () => {
+                include "range10.bxs"
+
+                main()
+
+                expect( clampedMiddle ).toBe( 5 )
+            })
+
+            it( "should check if a value is before the range", () => {
+                include "range10.bxs"
+
+                main()
+
+                expect( beforeRange ).toBe( true )
+            })
+
+            it( "should check if a value is after the range", () => {
+                include "range10.bxs"
+
+                main()
+
+                expect( afterRange ).toBe( true )
+            })
+
+        })
+    }
+}

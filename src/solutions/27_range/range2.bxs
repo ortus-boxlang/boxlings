@@ -1,4 +1,4 @@
-// Range with functional methods
+// Range with functional methods — Ranges are lazy objects, not arrays
 
 var sum     = (1..10).reduce( ( acc, n ) -> acc + n, 0 )
 var squares = (1..5).map( ( n ) -> n * n )

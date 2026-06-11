@@ -1,0 +1,18 @@
+// Half-bounded ranges
+
+var openEnd = 1..
+var result = []
+for ( i in openEnd ) {
+    result.append( i )
+    if ( i == 5 ) break
+}
+
+var hasLarge = openEnd.contains( 999 )
+var openStart = ..5
+var hasThree = openStart.contains( 3 )
+
+println( "Iterated: #result#" )
+println( "Has 999: #hasLarge#" )
+println( "Has 3 (open start): #hasThree#" )
+
+main()

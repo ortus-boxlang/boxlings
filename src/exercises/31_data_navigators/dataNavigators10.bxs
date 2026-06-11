@@ -1,0 +1,55 @@
+// Data Navigators Exercise 10 - JSONPath Expressions
+//
+// Your task: Use JSONPath-style expressions with get() and has().
+
+var config = {
+    "app": {
+        "name": "MyApp",
+        "version": "1.0.0"
+    },
+    "database": {
+        "host": "localhost",
+        "port": 5432,
+        "ssl": true
+    },
+    "features": [ "auth", "logging", "caching" ]
+}
+
+var nav = dataNavigate( config )
+
+// TODO: Use dot notation for nested access
+var appName = nav.get( "app.name" )
+assert appName == "MyApp" : "Expected 'MyApp', got: #appName#"
+
+// TODO: Use dot notation for deeper nesting
+var dbHost = nav.get( "database.host" )
+assert dbHost == "localhost" : "Expected 'localhost', got: #dbHost#"
+
+// TODO: Use array indexing (1-based)
+var firstFeature = nav.get( "features[1]" )
+assert firstFeature == "auth" : "Expected 'auth', got: #firstFeature#"
+
+// TODO: Use slice notation (1-based inclusive range)
+var featuresSlice = nav.query( "features[1:2]" )
+assert featuresSlice.len() == 2 : "Expected 2 features, got: #featuresSlice.len()#"
+
+// TODO: Use recursive descent (..) to find a key anywhere
+var foundName = nav.get( "..name" )
+assert foundName == "MyApp" : "Expected 'MyApp', got: #foundName#"
+
+// TODO: Use has() with recursive descent
+var hasDatabase = nav.has( "..database" )
+assert hasDatabase == true : "Expected database to be found via recursive descent"
+
+// TODO: Use wildcard with JSONPath
+var allFeatures = nav.query( "features[*]" )
+assert allFeatures.len() == 3 : "Expected 3 features, got: #allFeatures.len()#"
+
+// TODO: Use from() with JSONPath
+var dbNav = nav.from( "database" )
+assert dbNav.isPresent() : "Expected database navigator to be present"
+
+println( "JSONPath expressions working!" )
+println( "App: #appName# (via dot notation)" )
+println( "Database: #dbHost# (via dot notation)" )
+println( "Features: #allFeatures.toList()#" )

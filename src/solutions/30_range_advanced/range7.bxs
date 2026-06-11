@@ -1,0 +1,13 @@
+// Fully unbounded ranges with typed constraints
+
+var openRange = ..
+var containsFoo = openRange.contains( "foo" )
+var numberRange = (..).type( "number" )
+var fooInNumber = numberRange.contains( "foo" )
+var fiveInNumber = numberRange.contains( "5" )
+
+println( "Contains foo: #containsFoo#" )
+println( "Foo in number range: #fooInNumber#" )
+println( "Five in number range: #fiveInNumber#" )
+
+main()

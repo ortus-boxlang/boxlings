@@ -1,0 +1,17 @@
+// Work with unmodifiable sets and Java interop
+
+function main() {
+    var mySet = setNew( values=[ 1, 2, 3 ] )
+
+    var frozen = mySet.toUnmodifiable()
+    var thawed = frozen.toModifiable()
+
+    thawed.add( 4 )
+
+    println( "Frozen size: #frozen.size()#" )
+    println( "Thawed set: #thawed#" )
+
+    return thawed
+}
+
+main()

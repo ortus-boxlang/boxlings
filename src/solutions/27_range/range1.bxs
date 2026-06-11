@@ -1,4 +1,4 @@
-// Range operator basics
+// Range operator basics — creates Range objects, not arrays
 
 var ascending  = 1..5
 var descending = 5..1

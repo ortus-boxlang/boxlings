@@ -14,7 +14,7 @@ Inspired by [rustlings](https://github.com/rust-lang/rustlings), **BoxLings** is
 
 ## ✨ Features
 
-- 🎯 **141 Progressive Exercises** across 29 topics
+- 🎯 **152 Progressive Exercises** across 30 topics
 - 🧪 **TDD/BDD Learning** - Read and write TestBox tests
 - 👀 **Watch Mode** - Auto-rerun on file changes
 - 💡 **Hints System** - Get help when stuck
@@ -258,22 +258,23 @@ Dive deeper into BoxLang:
 17. **Async** (6) - Threads, futures, async programming
 18. **Components** (3) - bx:http, bx:query, etc.
 
-### Phase 3: Advanced (60 exercises)
+### Phase 3: Advanced (83 exercises)
 
 Master BoxLang-specific features:
 
 19. **Casting** (5) - castAs, javaCast, conversions
 20. **Quizzes** (3) - Comprehensive reviews
-21. **Classes** (8) - OOP, properties, metadata
+21. **Classes** (10) - OOP, properties, metadata, inner classes, template classes
 22. **BIFs** (6) - Built-in functions, member functions
 23. **Templating** (4) - .bxm files, template syntax
 24. **CLI Apps** (4) - Building CLI tools
 25. **Java Interop** (6) - Calling Java, java: prefix
 26. **Destructuring** (4) - Struct and array destructuring, renaming, nesting
-27. **Spread** (4) - Spread operator for arrays, structs, and function calls
+27. **Spread** (4) - Spread operator for arrays, struct, and function calls
 28. **Range** (2) - The `..` range operator and functional methods on ranges
 29. **Assert** (2) - The `assert` statement with custom messages
 30. **Set** (12) - The `Set` collection type, operations, and functional methods
+31. **Range Advanced** (9) - Decimal/character/DateTime ranges, custom stepping, exclusive boundaries, half-bounded/unbounded ranges, streaming, contains semantics, clamping, query methods
 
 ---
 

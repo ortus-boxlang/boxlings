@@ -1,0 +1,17 @@
+// Convert Sets to other types and work with queries
+
+function main() {
+    var mySet = setNew( type="linked", values=[ "a", "b", "c" ] )
+
+    var arr = mySet.toArray()
+    var csv = mySet.toList()
+    var dashList = mySet.toList( "-" )
+
+    println( "Array: #arr#" )
+    println( "CSV: #csv#" )
+    println( "Dash list: #dashList#" )
+
+    return arr
+}
+
+main()

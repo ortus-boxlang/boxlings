@@ -1,0 +1,47 @@
+// Data Navigators Exercise 5 - Solution: Default Values with getOrDefault()
+
+var serverConfig = {
+    "server": {
+        "host": "api.example.com",
+        "port": 8080,
+        "timeout": 30
+    }
+}
+
+var nav = dataNavigate( serverConfig )
+
+// Solution: Get a value that exists (returns the actual value)
+var host = nav.getOrDefault( "server", "localhost" )
+assert host == "api.example.com" : "Expected 'api.example.com', got: #host#"
+
+// Solution: Get a value that doesn't exist (returns the default)
+var maxRetries = nav.getOrDefault( "server", "maxRetries", 5 )
+assert maxRetries == 5 : "Expected default maxRetries of 5, got: #maxRetries#"
+
+// Solution: Get a boolean with default
+var sslEnabled = nav.getOrDefault( "server", "ssl", false )
+assert sslEnabled == true : "Expected ssl to be true, got: #sslEnabled#"
+
+// Solution: Get a string that doesn't exist (returns default)
+var logLevel = nav.getOrDefault( "server", "logLevel", "INFO" )
+assert logLevel == "INFO" : "Expected default log level 'INFO', got: #logLevel#"
+
+// Solution: Get a number that doesn't exist (returns default)
+var maxConnections = nav.getOrDefault( "server", "maxConnections", 100 )
+assert maxConnections == 100 : "Expected default maxConnections of 100, got: #maxConnections#"
+
+// Solution: Get a nested struct with default
+var cacheConfig = nav.getOrDefault( "cache", { "enabled": false, "ttl": 300 } )
+assert isStruct( cacheConfig ) : "Expected cache config to be a struct, got: #cacheConfig#"
+assert !cacheConfig.enabled : "Expected cache to be disabled by default"
+
+// Solution: Compare get() vs getOrDefault()
+var missingValue = nav.get( "nonexistent" )
+assert isNull( missingValue ) : "get() returns null for missing keys"
+
+var safeValue = nav.getOrDefault( "nonexistent", "safe_default" )
+assert safeValue == "safe_default" : "getOrDefault() returns the default for missing keys"
+
+println( "Default value handling successful!" )
+println( "Server: #host#:#serverConfig.server.port#" )
+println( "SSL: #sslEnabled#, Max Retries: #maxRetries#" )

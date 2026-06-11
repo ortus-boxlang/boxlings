@@ -1,0 +1,38 @@
+class {
+
+    class Item {
+
+        property name="name"  type="string"
+        property name="price" type="numeric"
+
+        function init( required string name, required numeric price ) {
+            variables.name  = arguments.name
+            variables.price = arguments.price
+            return this
+        }
+
+    }
+
+    property name="items" type="array"
+
+    variables.items = []
+
+    function init() {
+        return this
+    }
+
+    function addItem( required string name, required numeric price ) {
+        var item = new Item( arguments.name, arguments.price )
+        variables.items.append( item )
+        return this
+    }
+
+    function getTotal() {
+        return variables.items.reduce( ( acc, item ) => acc + item.getPrice(), 0 )
+    }
+
+    function getItems() {
+        return variables.items
+    }
+
+}

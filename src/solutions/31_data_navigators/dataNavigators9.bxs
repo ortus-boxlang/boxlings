@@ -1,0 +1,62 @@
+// Data Navigators Exercise 9 - Solution: Conditional Processing with ifPresent()
+
+var userProfile = {
+    "name": "Alice",
+    "email": "alice@example.com",
+    "phone": "+1-555-0123"
+}
+
+var nav = dataNavigate( userProfile )
+
+// Solution: Use ifPresent() to process email only if it exists
+var processedEmail = ""
+nav.ifPresent( "email", ( email ) -> {
+    processedEmail = email.toUpperCase()
+} )
+assert processedEmail == "ALICE@EXAMPLE.COM" : "Expected uppercase email, got: #processedEmail#"
+
+// Solution: Use ifPresent() to process phone only if it exists
+var processedPhone = ""
+nav.ifPresent( "phone", ( phone ) -> {
+    processedPhone = phone.replace( "-", "" ).replace( "+", "" )
+} )
+assert processedPhone == "15550123" : "Expected cleaned phone, got: #processedPhone#"
+
+// Solution: Use ifPresent() with a key that doesn't exist (should not execute)
+var bio = ""
+nav.ifPresent( "bio", ( b ) -> {
+    bio = b
+} )
+assert bio == "" : "Expected empty string for missing bio"
+
+// Solution: Use ifPresentOrElse() with a fallback
+var notificationMethod = ""
+nav.ifPresentOrElse(
+    "sms",
+    ( sms ) -> {
+        notificationMethod = "SMS: #sms#"
+    },
+    () -> {
+        notificationMethod = "Email: #nav.get('email')#"
+    }
+)
+assert notificationMethod.contains( "Email" ) : "Expected email fallback, got: #notificationMethod#"
+
+// Solution: Use ifPresentOrElse() when the key exists
+var contactInfo = ""
+nav.ifPresentOrElse(
+    "email",
+    ( email ) -> {
+        contactInfo = "Contact: #email#"
+    },
+    () -> {
+        contactInfo = "No email available"
+    }
+)
+assert contactInfo == "Contact: alice@example.com" : "Expected email contact, got: #contactInfo#"
+
+println( "Conditional processing successful!" )
+println( "Email (processed): #processedEmail#" )
+println( "Phone (cleaned): #processedPhone#" )
+println( "Notification: #notificationMethod#" )
+println( "Contact: #contactInfo#" )

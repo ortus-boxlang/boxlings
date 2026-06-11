@@ -1,0 +1,16 @@
+// Test membership and iterate over Set elements
+
+function main() {
+    var fruits = setOf( "apple", "banana", "cherry" )
+
+    println( "Has banana: #fruits.contains( "banana" )#" )
+    println( "Has grape: #fruits.contains( "grape" )#" )
+
+    for ( item in fruits ) {
+        println( "Fruit: #item#" )
+    }
+
+    return fruits
+}
+
+main()

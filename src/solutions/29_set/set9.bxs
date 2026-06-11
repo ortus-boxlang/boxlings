@@ -1,0 +1,20 @@
+// Use set algebra operators (+, -, *, ^)
+
+function main() {
+    var a = set{ 1, 2, 3 }
+    var b = set{ 3, 4, 5 }
+
+    var unionResult = a + b
+    var diffResult = a - b
+    var intersectResult = a * b
+    var symdiffResult = a ^ b
+
+    println( "Union (+): #unionResult#" )
+    println( "Difference (-): #diffResult#" )
+    println( "Intersection (*): #intersectResult#" )
+    println( "Symmetric difference (^): #symdiffResult#" )
+
+    return unionResult
+}
+
+main()

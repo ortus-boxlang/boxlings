@@ -1,0 +1,47 @@
+/**
+ * TestBox Test for range7 exercise
+ *
+ * READ THIS FIRST! This test shows you what your code should do.
+ *
+ * Your task: Make the exercise code pass these tests!
+ */
+class extends="testbox.system.BaseSpec" {
+
+    function run() {
+        describe( "Unbounded & Lazy Ranges 2 - Fully Unbounded", () => {
+
+            it( "should create a fully unbounded range", () => {
+                include "range7.bxs"
+
+                var result = main()
+
+                expect( openRange.isUnbounded() ).toBe( true )
+            })
+
+            it( "should check if unbounded range contains a value", () => {
+                include "range7.bxs"
+
+                main()
+
+                expect( containsFoo ).toBe( true )
+            })
+
+            it( "should reject incompatible types in a typed range", () => {
+                include "range7.bxs"
+
+                main()
+
+                expect( fooInNumber ).toBe( false )
+            })
+
+            it( "should accept coerced values in a typed range", () => {
+                include "range7.bxs"
+
+                main()
+
+                expect( fiveInNumber ).toBe( true )
+            })
+
+        })
+    }
+}

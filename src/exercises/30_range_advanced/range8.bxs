@@ -1,0 +1,20 @@
+// TODO: Use lazy iteration and Java Stream API with ranges
+
+function main() {
+    // TODO: Create a huge range (1 to 100 billion) and stream it
+    var result = (???).stream().limit( 5 ).toList()
+
+    // TODO: Create a half-bounded range and stream it with limit
+    var fromOpen = (???).stream().limit( 5 ).toList()
+
+    // TODO: Use functional streaming to get squares of first 3 numbers
+    var squares = (1..).stream().limit( 3 ).map( v => v * v ).toList()
+
+    println( "First 5: #result#" )
+    println( "From open: #fromOpen#" )
+    println( "Squares: #squares#" )
+
+    return result
+}
+
+main()

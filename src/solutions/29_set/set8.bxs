@@ -1,0 +1,20 @@
+// Perform Set algebra operations
+
+function main() {
+    var a = setOf( 1, 2, 3, 4 )
+    var b = setOf( 3, 4, 5, 6 )
+
+    var unionResult = a.union( b )
+    var intersectResult = a.intersection( b )
+    var diffResult = a.difference( b )
+    var symdiffResult = a.symmetricDifference( b )
+
+    println( "Union: #unionResult#" )
+    println( "Intersection: #intersectResult#" )
+    println( "Difference: #diffResult#" )
+    println( "Symmetric difference: #symdiffResult#" )
+
+    return unionResult
+}
+
+main()

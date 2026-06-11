@@ -1,0 +1,56 @@
+// Data Navigators Exercise 7 - Typed Getters
+//
+// Your task: Use typed getters to explicitly convert values to specific types.
+
+var config = {
+    "server": {
+        "host": "localhost",
+        "port": "8080",
+        "maxConnections": 100,
+        "ssl": true,
+        "timeout": 3600
+    },
+    "database": {
+        "host": "db.example.com",
+        "port": 5432,
+        "name": "mydb"
+    }
+}
+
+var nav = dataNavigate( config )
+
+// TODO: Get a string value using getAsString()
+var serverHost = nav.getAsText( "server", "host" )
+assert isString( serverHost ) : "Expected string, got: #serverHost#"
+
+// TODO: Get an integer value using getAsInteger()
+var serverPort = nav.getAsInteger( "server", "port" )
+assert isNumeric( serverPort ) : "Expected numeric port, got: #serverPort#"
+
+// TODO: Get a long value using getAsLong()
+var maxConnections = nav.getAsLong( "server", "maxConnections" )
+assert isNumeric( maxConnections ) : "Expected numeric connections, got: #maxConnections#"
+
+// TODO: Get a boolean value using getAsBoolean()
+var sslEnabled = nav.getAsBoolean( "server", "ssl" )
+assert isBoolean( sslEnabled ) : "Expected boolean, got: #sslEnabled#"
+
+// TODO: Get a double value using getAsDouble()
+var timeout = nav.getAsDouble( "server", "timeout" )
+assert isNumeric( timeout ) : "Expected numeric timeout, got: #timeout#"
+
+// TODO: Get a struct value using getAsStruct()
+var dbConfig = nav.getAsStruct( "database" )
+assert isStruct( dbConfig ) : "Expected struct, got: #dbConfig#"
+
+// TODO: Get a default value when key doesn't exist
+var cacheEnabled = nav.getAsBoolean( "server", "cache", false )
+assert !cacheEnabled : "Expected cache to be disabled by default"
+
+// TODO: Parse a string number using typed getter
+var parsedPort = nav.getAsInteger( "server", "port" )
+assert parsedPort == 8080 : "Expected port to be 8080, got: #parsedPort#"
+
+println( "Typed getters working!" )
+println( "Server: #nav.getAsText('server', 'host')#:#serverPort#" )
+println( "SSL: #sslEnabled#, Max Connections: #maxConnections#" )

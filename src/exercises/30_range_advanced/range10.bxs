@@ -1,0 +1,31 @@
+// TODO: Use clamping and position checks
+
+function main() {
+    // TODO: Create a range 1..10 and clamp values outside the bounds
+    var myRange = ???
+
+    // TODO: Clamp 15 (above high) — should snap to 10
+    var clampedHigh = myRange.??? ( ??? )
+
+    // TODO: Clamp 0 (below low) — should snap to 1
+    var clampedLow = myRange.??? ( ??? )
+
+    // TODO: Clamp 5 (within bounds) — should stay 5
+    var clampedMiddle = myRange.??? ( ??? )
+
+    // TODO: Check if -3 is before the range
+    var beforeRange = myRange.??? ( ??? )
+
+    // TODO: Check if 50 is after the range
+    var afterRange = myRange.??? ( ??? )
+
+    println( "Clamped 15: #clampedHigh#" )
+    println( "Clamped 0: #clampedLow#" )
+    println( "Clamped 5: #clampedMiddle#" )
+    println( "-3 before range: #beforeRange#" )
+    println( "50 after range: #afterRange#" )
+
+    return clampedHigh
+}
+
+main()

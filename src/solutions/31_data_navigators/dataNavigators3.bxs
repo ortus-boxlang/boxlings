@@ -1,0 +1,47 @@
+// Data Navigators Exercise 3 - Solution: Checking Existence with has()
+
+var config = {
+    "app": {
+        "name": "MyApp",
+        "version": "1.0.0"
+    },
+    "database": {
+        "host": "localhost",
+        "port": 5432
+    }
+}
+
+var nav = dataNavigate( config )
+
+// Solution: Check if "database" key exists using has()
+var hasDatabase = nav.has( "database" )
+assert hasDatabase == true : "Expected database key to exist"
+
+// Solution: Check if "cache" key exists (it doesn't)
+var hasCache = nav.has( "cache" )
+assert hasCache == false : "Expected cache key to not exist"
+
+// Solution: Check nested path exists using variadic keys
+var hasDbHost = nav.has( ["database", "host"] )
+assert hasDbHost == true : "Expected database.host to exist"
+
+// Solution: Check nested path that doesn't exist
+var hasDbPool = nav.has( ["database", "pool"] )
+assert hasDbPool == false : "Expected database.pool to not exist"
+
+// Solution: Use isEmpty() and isPresent() on navigators
+var dbNav = nav.from( "database" )
+assert dbNav.isPresent() : "Expected database navigator to be present"
+
+var cacheNav = nav.from( "cache" )
+assert cacheNav.isEmpty() : "Expected cache navigator to be empty"
+
+// Solution: Use hasByKey() for exact key matching (no path parsing)
+var nav2 = dataNavigate( { "key.with.dots": "value", "normalKey": "other" } )
+assert nav2.hasByKey( "key.with.dots" ) : "Expected exact key 'key.with.dots' to exist"
+assert nav2.hasByKey( "normalKey" ) : "Expected 'normalKey' to exist"
+assert !nav2.hasByKey( "key.with.dots.extra" ) : "Expected 'key.with.dots.extra' to not exist as exact key"
+
+println( "Existence checks passed!" )
+println( "Database exists: #hasDatabase#" )
+println( "Cache exists: #hasCache#" )

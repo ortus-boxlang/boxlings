@@ -1,0 +1,11 @@
+// Range types: decimal, character, DateTime
+
+var decimalRange = 3.5..1.5
+var charRange = "a".."e"
+var dateRange = (createDate(2024,1,1)..createDate(2024,1,5))
+
+println( "Decimal range: #decimalRange#" )
+println( "Character range: #charRange#" )
+println( "Date range length: #dateRange.len()#" )
+
+main()

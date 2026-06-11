@@ -1,0 +1,39 @@
+// Data Navigators Exercise 1 - Solution: Creating a Navigator
+
+var config = {
+    "app": {
+        "name": "MyApp",
+        "version": "1.0.0",
+        "database": {
+            "host": "localhost",
+            "port": 5432,
+            "ssl": true
+        }
+    }
+}
+
+// Solution: Create a data navigator from `config` using dataNavigate()
+var nav = dataNavigate( config )
+
+// Verify the navigator was created correctly
+assert nav != null : "Expected nav to be a DataNavigator, got: #nav#"
+
+// Navigate to the app name and verify it
+var appName = nav.from( ["app", "name"] ).get()
+assert appName == "MyApp" : "Expected app name to be 'MyApp', got: #appName#"
+
+// Navigate to the database host and verify it
+var dbHost = nav.from( ["database", "host"] ).get()
+assert dbHost == "localhost" : "Expected database host to be 'localhost', got: #dbHost#"
+
+// Navigate to the port and verify it
+var dbPort = nav.from( ["database", "port"] ).get()
+assert dbPort == 5432 : "Expected database port to be 5432, got: #dbPort#"
+
+// Navigate to the ssl setting and verify it
+var dbSsl = nav.from( ["database", "ssl"] ).get()
+assert dbSsl == true : "Expected database ssl to be true, got: #dbSsl#"
+
+println( "Navigator created successfully!" )
+println( "App: #appName# v#nav.from(['app', 'version'].get())#" )
+println( "Database: #dbHost#:#dbPort# (SSL: #dbSsl#)" )

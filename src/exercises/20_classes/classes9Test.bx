@@ -1,0 +1,47 @@
+/**
+ * TestBox Test for classes9 - Inner Classes
+ */
+class extends="testbox.system.BaseSpec" {
+
+    function run() {
+        describe( "Classes 9 - Inner Classes", () => {
+
+            it( "can add items via the inner Item class", () => {
+                var order = new classes9()
+                order.addItem( "Apple",  1.50 )
+                order.addItem( "Banana", 0.75 )
+                expect( order.getItems().len() ).toBe( 2 )
+            })
+
+            it( "each item has the correct name", () => {
+                var order = new classes9()
+                order.addItem( "Phone", 299.99 )
+                var item = order.getItems()[ 1 ]
+                expect( item.getName() ).toBe( "Phone" )
+            })
+
+            it( "each item has the correct price", () => {
+                var order = new classes9()
+                order.addItem( "Widget", 9.99 )
+                var item = order.getItems()[ 1 ]
+                expect( item.getPrice() ).toBe( 9.99 )
+            })
+
+            it( "getTotal() sums all item prices", () => {
+                var order = new classes9()
+                order.addItem( "Widget",  10.00 )
+                order.addItem( "Gadget",   5.00 )
+                order.addItem( "Doohickey", 2.50 )
+                expect( order.getTotal() ).toBe( 17.50 )
+            })
+
+            it( "addItem() supports chaining", () => {
+                var order = new classes9()
+                order.addItem( "A", 1.00 ).addItem( "B", 2.00 )
+                expect( order.getItems().len() ).toBe( 2 )
+            })
+
+        })
+    }
+
+}

@@ -1,0 +1,35 @@
+// TODO: Use contains() semantics and range-in-range checks
+
+function main() {
+    // TODO: Create a simple range 1..10 and check contains
+    var simpleRange = ???
+
+    // TODO: Check if 5 is in the range (should be true)
+    var containsFive = simpleRange.??? ( ??? )
+
+    // TODO: Check if 0 is in the range (should be false)
+    var containsZero = simpleRange.??? ( ??? )
+
+    // TODO: Create a stepped range 1..10 with step 3
+    var steppedRange = (???).step( ??? )
+
+    // TODO: Check if 4 is in the stepped range (reachable)
+    var containsFour = steppedRange.??? ( ??? )
+
+    // TODO: Check if 5 is in the stepped range (within bounds but NOT reachable)
+    var containsFiveStepped = steppedRange.??? ( ??? )
+
+    // TODO: Check if an inner range fits within an outer range
+    var outer = 1..10
+    var innerRange = 3..7
+    var rangeInRange = outer.??? ( ??? )
+
+    println( "Simple contains 5: #containsFive#" )
+    println( "Stepped contains 4 (reachable): #containsFour#" )
+    println( "Stepped contains 5 (not reachable): #containsFiveStepped#" )
+    println( "Range in range: #rangeInRange#" )
+
+    return containsFive
+}
+
+main()

@@ -1,0 +1,56 @@
+// Data Navigators Exercise 8 - Query with query() and JSONPath
+//
+// Your task: Use the `query()` method to retrieve all matching values.
+
+var data = {
+    "users": [
+        { "name": "Alice",   "role": "admin",  "active": true },
+        { "name": "Bob",     "role": "user",   "active": true },
+        { "name": "Charlie", "role": "user",   "active": false },
+        { "name": "Diana",   "role": "admin",  "active": true }
+    ],
+    "settings": {
+        "theme": "dark",
+        "language": "en"
+    }
+}
+
+var nav = dataNavigate( data )
+
+// TODO: Query all user names using wildcard
+var allNames = nav.query( "users[*].name" )
+assert isArray( allNames ) : "Expected array of names, got: #allNames#"
+assert allNames.len() == 4 : "Expected 4 names, got: #allNames.len()#"
+
+// TODO: Query only active users
+var activeUsers = nav.query( "users[?(@.active == true)].name" )
+assert isArray( activeUsers ) : "Expected array of names, got: #activeUsers#"
+assert activeUsers.len() == 3 : "Expected 3 active users, got: #activeUsers.len()#"
+
+// TODO: Query only admin roles
+var admins = nav.query( "users[?(@.role == 'admin')].name" )
+assert admins.len() == 2 : "Expected 2 admins, got: #admins.len()#"
+
+// TODO: Query all settings values
+var allSettings = nav.query( "settings.*" )
+assert isArray( allSettings ) : "Expected array of settings, got: #allSettings#"
+
+// TODO: Query a single value (wrapped in array)
+var theme = nav.query( "settings.theme" )
+assert isArray( theme ) : "Expected array, got: #theme#"
+
+// TODO: Use get() for single value (first match)
+var firstAdmin = nav.get( "users[?(@.role == 'admin')]" )
+assert isStruct( firstAdmin ) : "Expected struct, got: #firstAdmin#"
+
+println( "Query results:" )
+for ( var name in allNames ) {
+    println( "  - #name#" )
+}
+
+println( "\nActive users:" )
+for ( var name in activeUsers ) {
+    println( "  - #name#" )
+}
+
+println( "\nAdmins: #admins.toList()#" )

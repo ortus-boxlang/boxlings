@@ -1,0 +1,66 @@
+// Data Navigators Exercise 6 - Required Config with getOrThrow()
+//
+// Your task: Use `getOrThrow()` for critical configuration that must exist.
+
+var appConfig = {
+    "app": {
+        "name": "MyApp",
+        "version": "1.0.0"
+    },
+    "database": {
+        "host": "localhost",
+        "port": 5432,
+        "name": "mydb"
+    }
+}
+
+var nav = dataNavigate( appConfig )
+
+// TODO: Get required configuration values using getOrThrow()
+var appName = nav.getOrThrow( "app", "name" )
+assert appName == "MyApp" : "Expected app name to be 'MyApp', got: #appName#"
+
+// TODO: Get the version using getOrThrow()
+var appVersion = nav.getOrThrow( "app", "version" )
+assert appVersion == "1.0.0" : "Expected version to be '1.0.0', got: #appVersion#"
+
+// TODO: Get database host using getOrThrow()
+var dbHost = nav.getOrThrow( "database", "host" )
+assert dbHost == "localhost" : "Expected database host to be 'localhost', got: #dbHost#"
+
+// TODO: Get the database name using getOrThrow()
+var dbName = nav.getOrThrow( "database", "name" )
+assert dbName == "mydb" : "Expected database name to be 'mydb', got: #dbName#"
+
+// TODO: Try getting a non-existent key (should throw an exception)
+try {
+    nav.getOrThrow( "nonexistent", "key" )
+    throw( type: "TestError", message: "Expected getOrThrow to throw for missing key" )
+} catch ( any e ) {
+    assert e.type == "BoxRuntimeException" : "Expected BoxRuntimeException, got: #e.type#"
+    println( "getOrThrow correctly threw for missing key" )
+}
+
+// TODO: Use getOrThrow in a config validation function
+function validateConfig( nav ) {
+    var requiredKeys = [
+        [ "app", "name" ],
+        [ "database", "host" ]
+    ]
+
+    for ( var path in requiredKeys ) {
+        try {
+            nav.getOrThrow( path )
+        } catch ( any e ) {
+            throw( type: "ConfigError", message: "Missing required config: #path.toList('.')#" )
+        }
+    }
+
+    return true
+}
+
+assert validateConfig( nav ) : "Expected config validation to pass"
+
+println( "Required configuration validated!" )
+println( "#appName# v#appVersion#" )
+println( "Database: #dbName# on #dbHost#" )

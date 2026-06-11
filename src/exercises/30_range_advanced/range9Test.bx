@@ -1,0 +1,47 @@
+/**
+ * TestBox Test for range9 exercise
+ *
+ * READ THIS FIRST! This test shows you what your code should do.
+ *
+ * Your task: Make the exercise code pass these tests!
+ */
+class extends="testbox.system.BaseSpec" {
+
+    function run() {
+        describe( "Range Queries & Conversions 1 - Contains Semantics", () => {
+
+            it( "should check simple range bounds with contains()", () => {
+                include "range9.bxs"
+
+                var result = main()
+
+                expect( containsFive ).toBe( true )
+            })
+
+            it( "should return false for out-of-bounds values", () => {
+                include "range9.bxs"
+
+                main()
+
+                expect( containsZero ).toBe( false )
+            })
+
+            it( "should check step-reachability in stepped ranges", () => {
+                include "range9.bxs"
+
+                main()
+
+                expect( containsFour ).toBe( true )
+            })
+
+            it( "should return false for values within bounds but not reachable", () => {
+                include "range9.bxs"
+
+                main()
+
+                expect( containsFiveStepped ).toBe( false )
+            })
+
+        })
+    }
+}

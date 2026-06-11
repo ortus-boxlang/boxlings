@@ -1,0 +1,22 @@
+class Greeter {
+
+    property name="greeting" type="string" default="Hello"
+
+    function init( string greeting = "Hello" ) {
+        variables.greeting = arguments.greeting
+        return this
+    }
+
+    function greet( required string name ) {
+        return variables.greeting & ", " & name & "!"
+    }
+
+}
+
+class FormalGreeter extends="Greeter" {
+
+    function greet( required string name ) {
+        return "Good day, " & name & ". " & variables.greeting & "."
+    }
+
+}

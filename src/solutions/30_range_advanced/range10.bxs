@@ -1,0 +1,16 @@
+// Clamping and position checks
+
+var myRange = 1..10
+var clampedHigh = myRange.clamp( 15 )
+var clampedLow = myRange.clamp( 0 )
+var clampedMiddle = myRange.clamp( 5 )
+var beforeRange = myRange.isValueBefore( -3 )
+var afterRange = myRange.isValueAfter( 50 )
+
+println( "Clamped 15: #clampedHigh#" )
+println( "Clamped 0: #clampedLow#" )
+println( "Clamped 5: #clampedMiddle#" )
+println( "-3 before range: #beforeRange#" )
+println( "50 after range: #afterRange#" )
+
+main()

@@ -1,0 +1,13 @@
+// Create a Set from an array with duplicates
+
+function main() {
+    var numbers = [ 1, 2, 2, 3, 3, 3 ]
+    var mySet = numbers.toSet()
+
+    println( "Set size: #mySet.size()#" )
+    println( "Set as array: #mySet.toArray()#" )
+
+    return mySet
+}
+
+main()

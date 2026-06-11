@@ -1,0 +1,55 @@
+/**
+ * TestBox Test for range11 exercise
+ *
+ * READ THIS FIRST! This test shows you what your code should do.
+ *
+ * Your task: Make the exercise code pass these tests!
+ */
+class extends="testbox.system.BaseSpec" {
+
+    function run() {
+        describe( "Range Queries & Conversions 3 - Query Methods and Conversion", () => {
+
+            it( "should check if a range is ascending", () => {
+                include "range11.bxs"
+
+                var result = main()
+
+                expect( isAscending ).toBe( true )
+            })
+
+            it( "should check if a range is iterable", () => {
+                include "range11.bxs"
+
+                main()
+
+                expect( isIterable ).toBe( true )
+            })
+
+            it( "should check if a range is bounded", () => {
+                include "range11.bxs"
+
+                main()
+
+                expect( isBounded ).toBe( true )
+            })
+
+            it( "should get the start and end bounds", () => {
+                include "range11.bxs"
+
+                main()
+
+                expect( fromValue ).toBe( 1 )
+            })
+
+            it( "should convert a range to an array", () => {
+                include "range11.bxs"
+
+                main()
+
+                expect( asArray ).toBe( [ 1, 2, 3, 4, 5 ] )
+            })
+
+        })
+    }
+}

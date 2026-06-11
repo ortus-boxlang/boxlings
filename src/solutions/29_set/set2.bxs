@@ -1,0 +1,19 @@
+// Create Sets using literal syntax
+
+function main() {
+    var mySet = set{ 1, 2, 3 }
+    var emptySet = set{}
+    var arr = [ 4, 5 ]
+    var combinedSet = set{ 1, 2, ...arr }
+    var other = set{ 6, 7 }
+    var mergedSet = set{ ...other, ...combinedSet }
+
+    println( "Literal set: #mySet#" )
+    println( "Empty set: #emptySet#" )
+    println( "Combined: #combinedSet#" )
+    println( "Merged: #mergedSet#" )
+
+    return mergedSet
+}
+
+main()

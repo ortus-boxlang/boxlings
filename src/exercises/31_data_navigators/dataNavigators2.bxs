@@ -1,0 +1,47 @@
+// Data Navigators Exercise 2 - Basic Navigation with from()
+//
+// Your task: Use the `from()` method to navigate through nested structures.
+// The `from()` method returns a new navigator scoped to that segment.
+
+var appConfig = {
+    "application": {
+        "name": "BoxLang App",
+        "version": "2.0.0",
+        "features": {
+            "caching": true,
+            "logging": {
+                "level": "INFO",
+                "appenders": [ "console", "file" ]
+            }
+        }
+    }
+}
+
+// TODO: Create a navigator and navigate to the "logging" section using from()
+var nav = dataNavigate( appConfig )
+
+// TODO: Navigate to the logging section and store in `loggingNav`
+var loggingNav = {}
+
+// Get the log level using the scoped navigator
+var logLevel = loggingNav.get( "level" )
+assert logLevel == "INFO" : "Expected log level to be 'INFO', got: #logLevel#"
+
+// Get the appenders array
+var appenders = loggingNav.get( "appenders" )
+assert isArray( appenders ) : "Expected appenders to be an array, got: #appenders#"
+assert appenders.len() == 2 : "Expected 2 appenders, got: #appenders.len()#"
+
+// Navigate to the first appender
+var consoleAppender = loggingNav.from( ["appenders", 1] ).get()
+assert consoleAppender == "console" : "Expected first appender to be 'console', got: #consoleAppender#"
+
+// Navigate to the caching feature
+var cacheNav = nav.from( ["application", "features", "caching"] )
+var cachingEnabled = cacheNav.get()
+assert cachingEnabled == true : "Expected caching to be enabled, got: #cachingEnabled#"
+
+println( "Navigation successful!" )
+println( "App: #nav.from(['application', 'name'].get())#" )
+println( "Log Level: #logLevel#" )
+println( "Appenders: #appenders.toList()#" )

@@ -1,0 +1,15 @@
+// Create Sets with different types (default, linked, sorted)
+
+function main() {
+    var hashSet = set{ 3, 1, 2 }
+    var linkedSet = setNew( type="linked", values=[ 3, 1, 2 ] )
+    var sortedSet = setNew( type="sorted", values=[ 9, 1, 5, 3 ] )
+
+    println( "Hash set: #hashSet#" )
+    println( "Linked set: #linkedSet#" )
+    println( "Sorted set: #sortedSet#" )
+
+    return sortedSet
+}
+
+main()

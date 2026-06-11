@@ -1,0 +1,42 @@
+/**
+ * TestBox Test for classes10 - Template Classes
+ */
+class extends="testbox.system.BaseSpec" {
+
+    function run() {
+        describe( "Classes 10 - Template Classes", () => {
+
+            beforeEach( () => {
+                // include the script so its template classes become available
+                include "classes10.bxs"
+            })
+
+            it( "Greeter uses the default greeting", () => {
+                var g = new Greeter()
+                expect( g.greet( "World" ) ).toBe( "Hello, World!" )
+            })
+
+            it( "Greeter uses a custom greeting", () => {
+                var g = new Greeter( "Hi" )
+                expect( g.greet( "BoxLang" ) ).toBe( "Hi, BoxLang!" )
+            })
+
+            it( "FormalGreeter extends Greeter", () => {
+                var f = new FormalGreeter( "Greetings" )
+                expect( f instanceof "Greeter" ).toBeTrue()
+            })
+
+            it( "FormalGreeter formats greeting formally", () => {
+                var f = new FormalGreeter( "Greetings" )
+                expect( f.greet( "Sir" ) ).toBe( "Good day, Sir. Greetings." )
+            })
+
+            it( "FormalGreeter inherits getGreeting()", () => {
+                var f = new FormalGreeter( "Salutations" )
+                expect( f.getGreeting() ).toBe( "Salutations" )
+            })
+
+        })
+    }
+
+}

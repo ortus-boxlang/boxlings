@@ -1,0 +1,18 @@
+// Mutate Sets using member functions
+
+function main() {
+    var mySet = setOf( "apple", "banana", "cherry" )
+
+    mySet.add( "date" )
+    mySet.addAll( [ "fig", "grape" ] )
+    mySet.remove( "banana" )
+    mySet.removeAll( [ "cherry", "date" ] )
+    mySet.retainAll( [ "apple", "fig" ] )
+
+    println( "Final set: #mySet#" )
+    println( "Size: #mySet.size()#" )
+
+    return mySet
+}
+
+main()

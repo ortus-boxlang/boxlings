@@ -1,0 +1,54 @@
+// Data Navigators Exercise 11 - Recursive Descent and Wildcards
+//
+// Your task: Use recursive descent (..) and wildcards (*) with query().
+
+var data = {
+    "users": [
+        { "name": "Alice",   "role": "admin" },
+        { "name": "Bob",     "role": "user"  },
+        { "name": "Charlie", "role": "admin" }
+    ],
+    "settings": {
+        "theme": "dark",
+        "language": "en"
+    },
+    "database": {
+        "name": "mydb",
+        "host": "localhost"
+    }
+}
+
+var nav = dataNavigate( data )
+
+// TODO: Use recursive descent (..) to find all "name" keys anywhere in the structure
+var allNames = nav.query( "..name" )
+assert isArray( allNames ) : "Expected array of names, got: #allNames#"
+
+// TODO: Use recursive descent to find all "role" values
+var allRoles = nav.query( "..role" )
+assert isArray( allRoles ) : "Expected array of roles, got: #allRoles#"
+
+// TODO: Use wildcard (*) to get all values from settings
+var allSettings = nav.query( "settings.*" )
+assert isArray( allSettings ) : "Expected array of settings, got: #allSettings#"
+
+// TODO: Use wildcard to get all values from database
+var allDbValues = nav.query( "database.*" )
+assert isArray( allDbValues ) : "Expected array of database values, got: #allDbValues#"
+
+// TODO: Use recursive descent to find all "host" values
+var allHosts = nav.query( "..host" )
+assert isArray( allHosts ) : "Expected array of hosts, got: #allHosts#"
+
+// TODO: Use recursive descent to find all "language" values
+var allLanguages = nav.query( "..language" )
+assert isArray( allLanguages ) : "Expected array of languages, got: #allLanguages#"
+
+// TODO: Use recursive descent to find all "theme" values
+var allThemes = nav.query( "..theme" )
+assert isArray( allThemes ) : "Expected array of themes, got: #allThemes#"
+
+println( "Recursive descent and wildcards working!" )
+println( "All names found: #allNames.toList()#" )
+println( "All roles found: #allRoles.toList()#" )
+println( "Settings values: #allSettings.toList()#" )

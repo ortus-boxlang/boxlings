@@ -1,0 +1,11 @@
+// Lazy iteration and streaming
+
+var result = (1..100_000_000_000).stream().limit( 5 ).toList()
+var fromOpen = (1..).stream().limit( 5 ).toList()
+var squares = (1..).stream().limit( 3 ).map( v => v * v ).toList()
+
+println( "First 5: #result#" )
+println( "From open: #fromOpen#" )
+println( "Squares: #squares#" )
+
+main()

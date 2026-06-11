@@ -1,0 +1,39 @@
+/**
+ * TestBox Test for range8 exercise
+ *
+ * READ THIS FIRST! This test shows you what your code should do.
+ *
+ * Your task: Make the exercise code pass these tests!
+ */
+class extends="testbox.system.BaseSpec" {
+
+    function run() {
+        describe( "Unbounded & Lazy Ranges 3 - Streaming", () => {
+
+            it( "should stream a huge range without materializing it", () => {
+                include "range8.bxs"
+
+                var result = main()
+
+                expect( result ).toBe( [ 1, 2, 3, 4, 5 ] )
+            })
+
+            it( "should stream a half-bounded range with limit", () => {
+                include "range8.bxs"
+
+                main()
+
+                expect( fromOpen ).toBe( [ 1, 2, 3, 4, 5 ] )
+            })
+
+            it( "should use map in a stream pipeline", () => {
+                include "range8.bxs"
+
+                main()
+
+                expect( squares ).toBe( [ 1, 4, 9 ] )
+            })
+
+        })
+    }
+}

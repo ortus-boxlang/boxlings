@@ -1,0 +1,34 @@
+// TODO: Template classes let you define named classes inline in a .bxs script.
+// No separate .bx file needed — define and use them right here!
+//
+// Docs: https://boxlang.ortusbooks.com/boxlang-language/classes/template-classes
+
+// TODO: Complete the Greeter template class.
+//   - It has a 'greeting' property (string, default "Hello")
+//   - init( greeting ) stores the greeting and returns this
+//   - greet( name ) returns "{greeting}, {name}!"
+class Greeter {
+
+    property name="greeting" type="string" default="Hello"
+
+    function init( string greeting = "Hello" ) {
+        variables.greeting = ???
+        return this
+    }
+
+    function greet( required string name ) {
+        return ??? & ", " & name & "!"
+    }
+
+}
+
+// TODO: Complete FormalGreeter, which extends Greeter.
+//   - Override greet( name ) to return "Good day, {name}. {greeting}."
+//     (use variables.greeting to access the stored greeting)
+class FormalGreeter extends="???" {
+
+    function greet( required string name ) {
+        return "Good day, " & name & ". " & ??? & "."
+    }
+
+}

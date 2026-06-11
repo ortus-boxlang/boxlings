@@ -1,0 +1,15 @@
+// Create Sets using setOf() and listToSet()
+
+function main() {
+    var fromVarargs = setOf( 10, 20, 30 )
+    var fromString = "apple,banana,cherry".listToSet()
+    var fromPipe = "red|green|blue|red".listToSet( delimiter="|", type="linked" )
+
+    println( "From varargs: #fromVarargs#" )
+    println( "From string: #fromString#" )
+    println( "From pipe-delimited: #fromPipe#" )
+
+    return fromVarargs
+}
+
+main()
