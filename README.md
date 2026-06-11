@@ -187,7 +187,7 @@ This creates your personal `exercises/` folder from the templates.
 ### Menu displays question marks instead of icons (Windows 11)
 
 **Solution:** Temporarily force the terminal to use UTF-8
-- Windows 11: Before starting boxlings, run 
+- Windows 11: Before starting boxlings, run
 ```bash
 chcp 65001
 ```

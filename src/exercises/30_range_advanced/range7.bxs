@@ -1,0 +1,26 @@
+// TODO: Work with fully unbounded ranges (..) and typed constraints
+
+function main() {
+    // TODO: Create a fully unbounded range (..)
+    var openRange = ???
+
+    // TODO: Check if it contains "foo" (should be true, no type constraint)
+    var containsFoo = openRange.??? ( ??? )
+
+    // TODO: Create a typed unbounded range constrained to "number"
+    var numberRange = (???).type( ??? )
+
+    // TODO: Check if "foo" is in the typed range (should be false)
+    var fooInNumber = numberRange.??? ( ??? )
+
+    // TODO: Check if "5" is in the typed range (should be true, coerced)
+    var fiveInNumber = numberRange.??? ( ??? )
+
+    println( "Contains foo: #containsFoo#" )
+    println( "Foo in number range: #fooInNumber#" )
+    println( "Five in number range: #fiveInNumber#" )
+
+    return containsFoo
+}
+
+main()
